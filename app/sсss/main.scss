@@ -277,24 +277,115 @@ a.top-full__contact-text{
 		}
 	}
 
-	&__table{
+	&__ebala-detail{
+		font-family: $hncr;
+		font-size: 18px;
+		color: #484848;
+		position: relative;
+		
+		&:before{
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+
+		span{
+			padding-left: 40px;
+		}
+	}
+
+	&__table-title{
 		display: flex;
 		justify-content: space-between;
+		width: 100%;
+		padding-left: 15px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		border-bottom: 1px solid #e8e8e8;
+
+		.value__title{
+			flex: 1 1.2 100%;
+			text-align: center;
+
+			&:last-child{
+				flex: 2 1 100%;
+			}
+		}
+	}
+
+	.value__close{
+		width: 26px;
+		height: 26px;
+		position: absolute;
+		right: -13px;
+		&:after{
+			content: "\2715";
+			width: 26px;
+			height: 26px;
+			background: #a63333;
+			border-radius: 50%;
+			
+			color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+		}
+	}
+
+	&__table{
+		// display: flex;
+		display: none;
+		// justify-content: space-between;
+		align-content: space-between;
+		flex-direction: column;
+		width: 100%;
+		// display: inline-block;
+		border: 1px solid #e8e8e8;
+		padding-left: 60px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		position: relative;
+
+		&:not(:first-child){
+			border-top: none;
+		}
 
 		.value__table-finish{
 			display: flex;
 			flex-direction: column;
-			border: 1px solid #e8e8e8;
-			padding-left: 60px;
-			padding-top: 30px;
-			padding-bottom: 30px;
-			width: 100%;
+			// border: 1px solid #e8e8e8;
+			border-right: 1px solid #e8e8e8;	
+			
+			// padding-top: 30px;
+			// padding-bottom: 30px;
+			// width: 100%;
+			flex: 1 1.2 100%;
+
+			&:last-child{
+				flex: 2 1 100%;
+			}
+
+			&:not(:first-child){
+				padding-left: 30px;
+			}
 
 			.value__content{
 				display: flex;
 				flex-direction: column;
 			}
 		}
+
+		.value__item-wrap{
+			min-width: 100px;
+		}
+	}
+
+	&__table-row{
+		display: flex;
 	}
 
 	&__ebala{
@@ -307,17 +398,105 @@ a.top-full__contact-text{
 				margin-left: -10px;
 			}
 		}
+
+		.broken-glass{
+			&:before{
+				content: url(../images/steklo.png);
+			}
+		}
+
+		.cracked-screen{
+			&:before{
+				content: url(../images/display.png);
+			}
+		}
+
+		.battery{
+			&:before{
+				content: url(../images/calc9.png);
+			}
+		}
+
+		.diagnostics{
+			&:before{
+				content: url(../images/diagnoz.png);
+			}
+		}
+
+		.power-button{
+			&:before{
+				content: url(../images/vkluchenie.png);
+			}
+		}
+
+		.quiet-sound{
+			&:before{
+				content: url(../images/calc8.png);
+			}
+		}
+
+		.photo-camera{
+			&:before{
+				content: url(../images/calc10.png);
+			}
+		}
+
+		.home-button{
+			&:before{
+				content: url(../images/calc4.png);
+			}
+		}
+
+		.microphone{
+			&:before{
+				content: url(../images/calc3.png);
+			}
+		}
+
+		.housing{
+			&:before{
+				content: url(../images/korpus.png);
+			}
+		}
+
+		.other{
+			&:before{
+				content: url(../images/mat_plata.png);
+			}
+		}
 	}
 
 	&__content-block{
 
 		&--inline{
-			width: 45%;
+			width: 100%;
 			display: inline-block;
 			border: 1px solid #e8e8e8;
 			padding-left: 60px;
 			padding-top: 30px;
 			padding-bottom: 30px;
+		}
+
+		&--right{
+			float: right;
+			position: relative;
+
+			.value__price{
+				display: inline-block;
+				span{
+					font-size: 35px !important;
+				}
+			}
+			.value__title{
+				display: inline-block;
+				font-size: 25px;
+			}
+
+			&:before{
+				content: url(../images/arrow.png);
+				position: absolute;
+				left: -60%;
+			}
 		}
 	}
 
@@ -423,7 +602,6 @@ a.top-full__contact-text{
 			border: 1px solid #d8c5bc;
 			transition: .3s;
 			span{
-				
 				font-family: $hncb;
 			}
 		}
@@ -477,9 +655,19 @@ a.top-full__contact-text{
 
 	.btn{
 		border-color: #000;
-		color: #000;
+		color: #fff;
 		margin-bottom: 10px;
 		margin-left: 60px;
+		background: linear-gradient(to right, #4e5d84 20%, #2989a5 80%);
+		transition: .3s;
+		margin-top: 20px;
+		margin-bottom: 40px;
+		display: block;
+
+		&:hover{
+			background: linear-gradient(to right, #2989a5 20%, #4e5d84 80%);
+			transition: .3s;
+		}
 	}
 }
 
@@ -492,8 +680,21 @@ a.top-full__contact-text{
 		// max-width: 390px;
 		width: 38%;
 		min-width: 386px;
-		display: flex;
+		// display: flex;
 		flex-wrap: wrap;
+		align-content: flex-start;
+
+		&--phone{
+			display: flex;
+		}
+
+		&--ipad{
+			display: none;
+		}
+
+		&--samsung{
+			display: none;
+		}
 	}
 
 	&__right{
@@ -567,6 +768,8 @@ a.top-full__contact-text{
 		font-family: $hncr;
 		font-size: 13px;
 		height: 40%;
+		// width: 54px;
+		// height: 54px;
 		text-align: center;
 
 		span{
@@ -594,6 +797,15 @@ a.top-full__contact-text{
 
 		&:hover{
 			border: 1px solid #fff;
+		}
+
+		.calculate__text{
+			width: 54px;
+			height: 54px;
+			background: #fff;
+			border-radius: 50%;
+			color: #127f9b;
+			font-size: 54px;
 		}
 	}
 

@@ -1,0 +1,55 @@
+@media screen and (max-width: 480px){
+
+.main-contact{
+	.btn{
+		width: 70%;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+.main-contact__blocks{
+	flex-direction: column;
+	align-items: center;
+}
+
+.main-contact__block{
+	width: 90%;
+	text-align: center;
+	order: 1;
+}
+
+.main-contact__block:nth-child(2){
+	padding-left: 0;
+	order: 2;
+}
+
+.main-contact__title{
+	&--repairs{
+		display: none;
+	}
+}
+
+.main-contact__device-wrap{
+	&--repairs{
+		display: none;
+	}
+}
+
+.footer{
+	// padding-bottom: 20px;
+	height: auto;
+}
+
+.footer-wrap{
+	flex-direction: column;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.footer__block{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+}
