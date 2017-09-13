@@ -1,4 +1,4 @@
-@media screen and (max-width: 480px){
+@media screen and (max-width: 768px){
 
 .main-contact{
 	.btn{
@@ -37,14 +37,20 @@
 }
 
 //test
-.top-full, .reviews, .about, .method{
+.reviews, .about, .method{
+	display: none;
+}
+
+h1{
+	font-size: 31px !important;
+}
+
+.top-full__left-text{
 	display: none;
 }
 
 .common-title{
 	font-size: 28px;
-	// margin-left: 10px;
-	// margin-right: 10px;
 	max-width: 90% !important;
 	margin: 0 auto;
 }
@@ -52,6 +58,10 @@
 .value__block{
 	padding-left: 0;
 	padding-top: 150px;
+}
+
+.top-full__contact-text{
+	display: none !important;
 }
 
 .value__num-title{
@@ -62,6 +72,11 @@
 .value__content-block{
 	width: 90%;
 	margin: 0 auto;
+	text-align: center;
+
+	&--right{
+		float: none;
+	}
 }
 
 .value__title{
@@ -77,19 +92,97 @@
 	}
 }
 
+.value__table{
+	padding-left: 0px;
+	padding-bottom: 0;
+	padding-top: 0;
+
+	.value__table-title{}
+}
+
+.value__table-row{
+	flex-direction: column;
+	align-items: center;
+}
+
+.value__table-title{
+	display: none;
+}
+
+.value__table-row .value__table-finish{
+	flex: none;
+	width: 100%;
+	height: 114px;
+	padding-left: 0 !important;
+}
+
+.value__table .value__table-finish{
+	border-top: 1px solid #dddddd;
+}
+
+.value__table .value__table-finish .value__content{
+	height: 100%;
+}
+
+.value__ebala{
+	justify-content: center;
+	height: 100%;
+	align-items: center;
+	flex-direction: column;
+
+	.value__title{
+		display: block;
+		margin-bottom: 10px;
+	}
+}
+
+.value__ebala-detail:before{
+	transform: translateY(-10%);
+}
+
+.value__close{
+	top: -13px;
+}
+
+.value__list{
+	justify-content: center;
+}
+
+.value__finish{
+	left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
 .calculate__right{
 	display: none;
 }
 
+.value .btn{
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
 .calculate__left{
-	justify-content: space-between;
+	// justify-content: space-between;
+	min-width: 0;
+	width: 100%;
+	// margin: 0 auto;
+	// margin-left: -19px;
+    padding-bottom: 120px;
 }
 
 .calculate__item{
 	width: 81px;
 	height: 81px;
+	margin-left: 15px;
 	margin-right: 0;
 	margin-bottom: 15px;
+}
+
+.calculate__discount-wrap{
+	position: absolute;
+	bottom: 50px;
 }
 
 .calculate__text{
@@ -99,7 +192,7 @@
 }
 
 .recall-fon{
-	background: url(../images/recall-fon-mobile.jpg);
+	background: url(../images/recall-fon-mobile.jpg) no-repeat;
 }
 
 .recall__phone-wrap{
@@ -112,6 +205,83 @@
 
 .wrap{
 	min-width: 320px;
+
+	&--second{
+	    margin-top: 150px;
+	}
+}
+
+
+.top-full{
+	background-position: -222px 0;
+}
+
+.top-full__wrap{
+	// position: relative;
+}
+
+.navigation{
+	display: none;
+}
+
+.top-full__mid{
+	max-width: 95%;
+}
+
+.top-full__bottom{
+	position: absolute;
+	bottom: -120px;
+
+	.top-full__desc{
+		color: #5c5c5c;
+	}
+}
+
+.top-full__right{
+	width: 100%;
+	padding-bottom: 20px;
+}
+
+.top-full__right-text{
+	transform: rotate(0deg);
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.top-full__wrapper--high{
+	display: flex;
+	flex-direction: column;
+}
+
+.top-full__top{
+	text-align: center;
+}
+
+.top-full__btns{
+	position: relative;
+	padding-top: 30px;
+	justify-content: center;
+
+	span{
+		position: absolute;
+		top: 0;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.btn--small{
+		// position: absolute;
+		// left: 0;
+		// top: 0;
+		display: none;
+	}
+}
+
+.top-full__contact-block{
+	// display: none;
 }
 
 .footer{

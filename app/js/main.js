@@ -219,10 +219,14 @@ var calculator = function(){
 
 	$('.broken-glass').click(function(){
 
+		idValPrice = $('#value__price span');
+
 		if ($(this).hasClass('calculate__active-btn')) {
 			var priceValue1 = $(this).data('price');
 			$('.table-1').fadeIn();
 			$('.table-1').find('.value__price span').text(priceValue1);
+
+			idValPrice.val() + priceValue1;
 
 		}else{
 			$('.table-1').fadeOut();
@@ -234,6 +238,7 @@ var calculator = function(){
 			$('.table-2').fadeIn();
 			$('.table-2').find('.value__price span').text(priceValue2);
 
+			idValPrice.val() + priceValue2;
 		}else{
 			$('.table-2').fadeOut();
 		}
@@ -342,7 +347,7 @@ var calculator = function(){
 		 _this_9 = $('.microphone'),
 		 _this_10 = $('.housing'),
 		 _this_11 = $('.other');
-		
+
 		if ( $(this).parent().hasClass('table-1') ) { _this_1.removeClass('calculate__active-btn') }
 		if ( $(this).parent().hasClass('table-2') ) { _this_2.removeClass('calculate__active-btn') }
 		if ( $(this).parent().hasClass('table-3') ) { _this_3.removeClass('calculate__active-btn') }
@@ -358,6 +363,7 @@ var calculator = function(){
 		$(this).parent().fadeOut();
 	})
 
+	
 
 }
 

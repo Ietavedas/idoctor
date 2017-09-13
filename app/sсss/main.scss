@@ -53,8 +53,15 @@ $hncb: HelveticaNeueCyr-Bold;
 $hncl: HelveticaNeueCyr-Light;
 $hnct: HelveticaNeueCyr-Thin;
 
+html{
+	width: 100%;
+	height: 100%;
+}
+
 body{
 	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
 }
 
 .btn{
@@ -116,6 +123,16 @@ body{
 	&__left{
 		width: 16.6%;
 		// display: inline-block;
+
+	}
+
+	&__left-text{
+		font-family: $hnct;
+		font-size: 35px;
+		color: #deae9a;
+		transform: rotate(-90deg);
+		white-space: nowrap;
+		text-align: left;
 	}
 
 	&__mid{
@@ -136,6 +153,14 @@ body{
 	&__right{
 		width: 28.8%;
 		// display: inline-block;
+	}
+
+	&__right-text{
+		font-size: 25px;
+		font-family: $hnct;
+		color: #b1e9f5;
+		display: flex;
+		transform: rotate(-90deg);
 	}
 
 	&__contact{
@@ -181,12 +206,20 @@ body{
 		position: absolute;
 		bottom: 30px;
 		max-width: 720px;
+		padding-left: 30px;
+		&:before{
+			content: url(../images/i.png);
+			position: absolute;
+			left: 0;
+			margin-top: 5px;
+		}
 	}
 
 	&__desc{
 		font-size: 16px;
 		font-family: $hncr;
 		color: #fff;
+		line-height: 1.6;
 	}
 
 	&__btns{
@@ -392,6 +425,10 @@ a.top-full__contact-text{
 		display: flex;
 		flex-wrap: wrap;
 		margin-top: 5px;
+
+		.value__title{
+			display: none;
+		}
 
 		.value__item-wrap{
 			&:first-child{
@@ -870,7 +907,7 @@ a.top-full__contact-text{
 	background: url(../images/recall-fon.jpg);
 	width: 100%;
 	height: 485px;
-	background-size: cover;
+	background-size: cover !important;
 
 	.common-title{
 		max-width: 680px;
@@ -1114,7 +1151,7 @@ a.top-full__contact-text{
 	}
 
 	&__qewstion-top{
-		height: 50px;
+		// height: 50px;
 		cursor: pointer;
 
 		span{
@@ -1135,6 +1172,7 @@ a.top-full__contact-text{
 		font-size: 20px;
 		font-family: $hncr;
 		color: #fff;
+		line-height: 1.1;
 	}
 
 	&__device-wrap{
