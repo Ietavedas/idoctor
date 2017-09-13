@@ -36,6 +36,84 @@
 	}
 }
 
+//test
+.top-full, .reviews, .about, .method{
+	display: none;
+}
+
+.common-title{
+	font-size: 28px;
+	// margin-left: 10px;
+	// margin-right: 10px;
+	max-width: 90% !important;
+	margin: 0 auto;
+}
+
+.value__block{
+	padding-left: 0;
+	padding-top: 150px;
+}
+
+.value__num-title{
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.value__content-block{
+	width: 90%;
+	margin: 0 auto;
+}
+
+.value__title{
+	text-align: center;
+}
+
+.value__item-wrap{
+	margin-left: 0;
+	margin-right: 14px;
+
+	&:after{
+		display: none;
+	}
+}
+
+.calculate__right{
+	display: none;
+}
+
+.calculate__left{
+	justify-content: space-between;
+}
+
+.calculate__item{
+	width: 81px;
+	height: 81px;
+	margin-right: 0;
+	margin-bottom: 15px;
+}
+
+.calculate__text{
+	span{
+		font-size: 11px;
+	}
+}
+
+.recall-fon{
+	background: url(../images/recall-fon-mobile.jpg);
+}
+
+.recall__phone-wrap{
+	max-width: 90%;
+}
+
+.recall__phone{
+	font-size: 30px;
+}
+
+.wrap{
+	min-width: 320px;
+}
+
 .footer{
 	// padding-bottom: 20px;
 	height: auto;
