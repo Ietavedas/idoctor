@@ -4,20 +4,57 @@ setSize();
 
 buttonsWidth();
 
+// if ($(window).outerWidth() < 1080) {
+// 	$('.method__images').addClass('js-method');
+// }else{
+// 	$('.method__images').removeClass('js-method');
+// }
+
+	slidesMethod();
+// if($(window).outerWidth() < 769){
+// }
+
+
+
 $(window).resize(function(){
 	setSize();
+	
+
+
+	if ($(window).outerWidth() > 480) {
+		slidesMethodUnslick();
+	}else{
+		slidesMethod();
+	}
 })
 	
 
 function setSize(){
-	var windowWindth = $(window).width();
+	var windowWindth = $(window).outerWidth();
 	var windowHeight = $(window).height();
 
-	$('.js-wrap').css({
-		'width' : windowWindth,
-		'height' : windowHeight
-	})
+	if (windowWindth > 1080) {
+		$('.js-wrap').css({
+			'width' : windowWindth,
+			'height' : windowHeight
+		})
+	}else{
+		$('.js-wrap').css({
+			'width' : '100%',
+			'height' : 'auto'
+		})
+	}
+
 }
+
+$('.methos__slide').each(function(){
+	var windowWindth = $(window).outerWidth();
+	if (windowWindth < 481) {
+		$(this).css(
+			'max-width', windowWindth
+		)
+	}
+})
 
 $('.slider').slick({
 	slidesToShow: 1,
@@ -28,6 +65,58 @@ $('.slider').slick({
 	arrows: true,
 	appendArrows: $('.slider-control')
 });
+
+function slidesMethod(){
+
+
+$('.method__images').slick({
+	// infinite         : false,
+	// variableWidth    : true
+	responsive: [
+		{
+			breakpoint: 10000,
+			settings: "unslick"
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow     : 1,
+				slidesToScroll   : 1,
+				arrows           : false
+			}
+		}
+	]
+});
+
+$('.about').slick({
+	// infinite         : false,
+	// variableWidth    : true
+	responsive: [
+		{
+			breakpoint: 10000,
+			settings: "unslick"
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow     : 1,
+				slidesToScroll   : 1,
+				arrows           : false
+			}
+		}
+	]
+});
+
+
+}
+
+function slidesMethodUnslick(){
+	$('.method__images').slick('unslick');
+	$('.about').slick('unslick');
+}
+
+
+
 
 
 function buttonsWidth(){
@@ -367,7 +456,10 @@ var calculator = function(){
 
 }
 
-calculator();
 
+
+
+
+calculator();
 
 })

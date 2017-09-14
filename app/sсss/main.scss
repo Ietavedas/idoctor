@@ -56,6 +56,7 @@ $hnct: HelveticaNeueCyr-Thin;
 html{
 	width: 100%;
 	height: 100%;
+	overflow-x: hidden;
 }
 
 body{
@@ -100,6 +101,7 @@ body{
 	background: url(../images/top-fon.jpg) no-repeat;
 	width: 100%;
 	height: 100%;
+	// height: auto;
 	background-size: cover;
 
 	&__wrap{
@@ -161,6 +163,10 @@ body{
 		color: #b1e9f5;
 		display: flex;
 		transform: rotate(-90deg);
+
+		.social{
+			margin-left: 10px;
+		}
 	}
 
 	&__contact{
@@ -234,6 +240,14 @@ body{
 		}
 	}
 }
+
+// @media screen and (max-width: 320px){
+
+// 	.methos__slide{
+// 		max-width: 320px !important;
+// 	}
+
+// }
 
 a.top-full__contact-text{
 	display: block;
@@ -873,6 +887,7 @@ a.top-full__contact-text{
 
 
 .method{
+	margin-top: 30px;
 	&__images{
 		display: flex;
 		justify-content: space-between;
@@ -882,13 +897,20 @@ a.top-full__contact-text{
 
 		&:after{
 			content: "";
-			width: 100%;
+			width: 80%;
 			height: 2px;
 			background: #e8e8e8;
 			position: absolute;
-			top: 50%;
+			top: 30%;
 			z-index: -1;
+			left: 10%;
 		}
+	}
+
+	img{
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 30px;
 	}
 
 	&__descs{
@@ -898,9 +920,19 @@ a.top-full__contact-text{
 	}
 
 	&__desc{
-	    max-width: 154px;
+	    max-width: 154px;	
 		text-align: center;
+		font-family: $hncl;
+		// width: 100%;
 	}
+}
+
+.methos__slide{
+	width: 100%;
+	outline: 0;
+	// max-width: 414px;
+	display: flex;
+	justify-content: center;
 }
 
 .recall-fon{
@@ -949,6 +981,7 @@ a.top-full__contact-text{
 	display: flex;
 	// flex-wrap: wrap;
 	justify-content: space-between;
+	flex-wrap: wrap;
 
 	&__column{
 		// flex: 1 1 100%;
@@ -956,11 +989,13 @@ a.top-full__contact-text{
 	}
 
 	&__item{
-		width: 93%;
+		// width: 93%;
+		width: 30%;
 		text-align: center;
 		margin: 0 auto;
 		margin-top: 50px;
 		margin-bottom: 50px;
+		outline: 0;
 	}
 
 	&__item-img{
@@ -1111,6 +1146,7 @@ a.top-full__contact-text{
 	.btn{
 		border-color: #000;
 		color: #000;
+		outline: 0;
 	}
 	margin-bottom: 70px;
 }
