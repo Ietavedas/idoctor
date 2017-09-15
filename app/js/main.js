@@ -383,14 +383,14 @@ var calculator = function(){
 			$('.table-2').fadeIn();
 			$('.table-2').find('.value__price span').text(priceValue2);
 
-			idValPrice += +priceValue2 - 30%;
+			idValPrice += +priceValue2;
 
 			$('#value__price span').text(idValPrice);
 
 			// idValPrice.val() + priceValue2;
 		}else{
 			$('.table-2').fadeOut();
-			idValPrice -= +priceValue2 - 30%;
+			idValPrice -= +priceValue2;
 
 			$('#value__price span').text(idValPrice);
 		}
