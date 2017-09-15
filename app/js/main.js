@@ -126,22 +126,33 @@ function buttonsWidth(){
 }
 
 
-$('#mainPhone').inputmask("+7 (999) 999-99-99");
+$('#mainPhone').inputmask({ mask: "+9[(999)-999-99-99]", greedy: false});
+$('#mainPhonePopup').inputmask("+7 (999) 999-99-99");
 
 
 $('.main-contact__qewstion-top').click(function(){
 	var elem = $(this).parents('.main-contact__qewstion-block').find('.main-contact__qewstion-bottom');
+	$(this)
+	.addClass('main-contact__qewstion-top--active')
+	.parents('.main-contact__qewstion-block')
+	.siblings()
+	.find('.main-contact__qewstion-top')
+	.removeClass('main-contact__qewstion-top--active');
 
 	if (elem.is(":hidden")) {
 		$('.main-contact__qewstion-bottom').hide('slow'),
 		elem.show('slow')
 	}else{
 		$('.main-contact__qewstion-bottom').hide('slow')
+		$('.main-contact__qewstion-top').removeClass('main-contact__qewstion-top--active');
 	}
 	
 })
 
 $('#morphing').fancybox();
+$('#toRecall').fancybox();
+$('#toRecall2').fancybox();
+$('#toRecall3').fancybox();
 
 
 // $('#mainForm').validate({
@@ -304,122 +315,246 @@ var calculator = function(){
 				opacity: 0
 			}, 300);
 		}
+
+		if ($('.calculate__item').hasClass('calculate__active-btn')) {
+			$('.value__block-wrap--hidden').fadeIn();
+		}else{
+			$('.value__block-wrap--hidden').fadeOut();
+		}
+
+		//тут ска
+
+		// var arr = $('.value__price span');
+		// var arr = $('.value__price span');
+
+		// // console.log(arr);
+		// Number(arr);
+
+		// for (i = 0; i < arr.length; i++) {
+
+		// 	parseFloat(arr[i]);
+		// 	console.log(arr[i]);
+
+		// 	if ( arr[i] % 2 == 0 ) {
+
+		// 		// console.log( arr[i] );
+
+		// 		// console.log('!!!');
+
+		// 	}
+
+		// }
+
+		// if ($('.value__table').is(':visible').length == 2) {
+			
+		// }
 	})
+
+	idValPrice = $('#value__price span').text();
+	var idValPrice = Number(idValPrice);
+	// console.log(idValPrice);
 
 	$('.broken-glass').click(function(){
 
-		idValPrice = $('#value__price span');
+		var priceValue1 = $(this).data('price');
+		var priceValue1 = Number(priceValue1);
 
 		if ($(this).hasClass('calculate__active-btn')) {
-			var priceValue1 = $(this).data('price');
 			$('.table-1').fadeIn();
 			$('.table-1').find('.value__price span').text(priceValue1);
 
-			idValPrice.val() + priceValue1;
+			idValPrice += +priceValue1;
+
+			$('#value__price span').text(idValPrice);
 
 		}else{
 			$('.table-1').fadeOut();
+
+			idValPrice -= +priceValue1;
+
+			$('#value__price span').text(idValPrice);
 		}
 	})
 	$('.cracked-screen').click(function(){
+
+		var priceValue2 = $(this).data('price');
+		var priceValue2 = Number(priceValue2);
 		if ($(this).hasClass('calculate__active-btn')) {
-			var priceValue2 = $(this).data('price');
 			$('.table-2').fadeIn();
 			$('.table-2').find('.value__price span').text(priceValue2);
 
-			idValPrice.val() + priceValue2;
+			idValPrice += +priceValue2 - 30%;
+
+			$('#value__price span').text(idValPrice);
+
+			// idValPrice.val() + priceValue2;
 		}else{
 			$('.table-2').fadeOut();
+			idValPrice -= +priceValue2 - 30%;
+
+			$('#value__price span').text(idValPrice);
 		}
 	})
 	$('.battery').click(function(){
+		var priceValue3 = $(this).data('price');
+		var priceValue3 = Number(priceValue3);
 		if ($(this).hasClass('calculate__active-btn')) {
-			var priceValue3 = $(this).data('price');
 			$('.table-3').fadeIn();
 			$('.table-3').find('.value__price span').text(priceValue3);
 
+			idValPrice += +priceValue3;
+
+			$('#value__price span').text(idValPrice);
+
 		}else{
 			$('.table-3').fadeOut();
+			idValPrice -= +priceValue3;
+
+			$('#value__price span').text(idValPrice);
 		};
 	})
 	$('.diagnostics').click(function(){
+		var priceValue4 = $(this).data('price');
+		var priceValue4 = Number(priceValue4);
 		if ($(this).hasClass('calculate__active-btn')) {
-			var priceValue4 = $(this).data('price');
 			$('.table-4').fadeIn();
 			$('.table-4').find('.value__price span').text(priceValue4);
 
+			idValPrice += +priceValue4;
+
+			$('#value__price span').text(idValPrice);
+
 		}else{
 			$('.table-4').fadeOut();
+			idValPrice -= +priceValue4;
+
+			$('#value__price span').text(idValPrice);
 		}
 	})
 	$('.power-button').click(function(){
+		var priceValue5 = $(this).data('price');
+		var priceValue5 = Number(priceValue5);
 		if ($(this).hasClass('calculate__active-btn')) {
-			var priceValue5 = $(this).data('price');
 			$('.table-5').fadeIn();
 			$('.table-5').find('.value__price span').text(priceValue5);
 
+			idValPrice += +priceValue5;
+
+			$('#value__price span').text(idValPrice);
+
 		}else{
 			$('.table-5').fadeOut();
+			idValPrice -= +priceValue5;
+
+			$('#value__price span').text(idValPrice);
 		}
 	})
 	$('.quiet-sound').click(function(){
+		var priceValue6 = $(this).data('price');
+		var priceValue6 = Number(priceValue6);
 		if ($(this).hasClass('calculate__active-btn')) {
-			var priceValue6 = $(this).data('price');
 			$('.table-6').fadeIn();
 			$('.table-6').find('.value__price span').text(priceValue6);
 
+			idValPrice += +priceValue6;
+
+			$('#value__price span').text(idValPrice);
+
 		}else{
 			$('.table-6').fadeOut();
+			idValPrice -= +priceValue6;
+
+			$('#value__price span').text(idValPrice);
 		}
 	})
 	$('.photo-camera').click(function(){
+		var priceValue7 = $(this).data('price');
+		var priceValue7 = Number(priceValue7);
 		if ($(this).hasClass('calculate__active-btn')) {
-			var priceValue7 = $(this).data('price');
 			$('.table-7').fadeIn();
 			$('.table-7').find('.value__price span').text(priceValue7);
 
+			idValPrice += +priceValue7;
+
+			$('#value__price span').text(idValPrice);
+
 		}else{
 			$('.table-7').fadeOut();
+			idValPrice -= +priceValue7;
+
+			$('#value__price span').text(idValPrice);
 		}
 	})
 	$('.home-button').click(function(){
+		var priceValue8 = $(this).data('price');
+		var priceValue8 = Number(priceValue8);
 		if ($(this).hasClass('calculate__active-btn')) {
-			var priceValue8 = $(this).data('price');
 			$('.table-8').fadeIn();
 			$('.table-8').find('.value__price span').text(priceValue8);
 
+			idValPrice += +priceValue8;
+
+			$('#value__price span').text(idValPrice);
+
 		}else{
 			$('.table-8').fadeOut();
+			idValPrice -= +priceValue8;
+
+			$('#value__price span').text(idValPrice);
 		}
 	})
 	$('.microphone').click(function(){
+		var priceValue9 = $(this).data('price');
+		var priceValue9 = Number(priceValue9);
 		if ($(this).hasClass('calculate__active-btn')) {
-			var priceValue9 = $(this).data('price');
 			$('.table-9').fadeIn();
 			$('.table-9').find('.value__price span').text(priceValue9);
 
+			idValPrice += +priceValue9;
+
+			$('#value__price span').text(idValPrice);
+
 		}else{
 			$('.table-9').fadeOut();
+			idValPrice -= +priceValue9;
+
+			$('#value__price span').text(idValPrice);
 		}
 	})
 	$('.housing').click(function(){
+		var priceValue10 = $(this).data('price');
+		var priceValue10 = Number(priceValue10);
 		if ($(this).hasClass('calculate__active-btn')) {
-			var priceValue10 = $(this).data('price');
 			$('.table-10').fadeIn();
 			$('.table-10').find('.value__price span').text(priceValue10);
 
+			idValPrice += +priceValue10;
+
+			$('#value__price span').text(idValPrice);
+
 		}else{
 			$('.table-10').fadeOut();
+			idValPrice -= +priceValue10;
+
+			$('#value__price span').text(idValPrice);
 		}
 	})
 	$('.other').click(function(){
+		var priceValue11 = $(this).data('price');
+		var priceValue11 = Number(priceValue11);
 		if ($(this).hasClass('calculate__active-btn')) {
-			var priceValue11 = $(this).data('price');
 			$('.table-11').fadeIn();
 			$('.table-11').find('.value__price span').text(priceValue11);
 
+			idValPrice += +priceValue11;
+
+			$('#value__price span').text(idValPrice);
+
 		}else{
 			$('.table-11').fadeOut();
+			idValPrice -= +priceValue11;
+
+			$('#value__price span').text(idValPrice);
 		}
 	})
 
@@ -437,6 +572,12 @@ var calculator = function(){
 		 _this_10 = $('.housing'),
 		 _this_11 = $('.other');
 
+		rmPrice = $(this).parent('.value__table').find('.value__price span').text();
+
+		idValPrice -= +rmPrice;
+
+		$('#value__price span').text(idValPrice);
+
 		if ( $(this).parent().hasClass('table-1') ) { _this_1.removeClass('calculate__active-btn') }
 		if ( $(this).parent().hasClass('table-2') ) { _this_2.removeClass('calculate__active-btn') }
 		if ( $(this).parent().hasClass('table-3') ) { _this_3.removeClass('calculate__active-btn') }
@@ -450,16 +591,14 @@ var calculator = function(){
 		if ( $(this).parent().hasClass('table-11') ) { _this_11.removeClass('calculate__active-btn') }
 
 		$(this).parent().fadeOut();
-	})
 
-	
+		// if ($('.value__table').is(':visible').length == 0) {
+		// 	$('.value__block-wrap--hidden').fadeOut();
+		// }
+	})
 
 }
 
-
-
-
-
 calculator();
 
-})
+});
