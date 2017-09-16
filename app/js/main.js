@@ -18,7 +18,7 @@ buttonsWidth();
 
 $(window).resize(function(){
 	setSize();
-	
+
 
 
 	if ($(window).outerWidth() > 480) {
@@ -27,7 +27,7 @@ $(window).resize(function(){
 		slidesMethod();
 	}
 })
-	
+
 
 function setSize(){
 	var windowWindth = $(window).outerWidth();
@@ -146,7 +146,7 @@ $('.main-contact__qewstion-top').click(function(){
 		$('.main-contact__qewstion-bottom').hide('slow')
 		$('.main-contact__qewstion-top').removeClass('main-contact__qewstion-top--active');
 	}
-	
+
 })
 
 $('#morphing').fancybox();
@@ -281,10 +281,10 @@ var calculator = function(){
 
 	$('.calculate__item').click(function(){
 		// var priceValue = $(this).data('price');
-		// var counter = 0;		
+		// var counter = 0;
 
 		// $('.value__price span').text(priceValue);
-		
+
 
 		if ($(this).hasClass('calculate__active-btn')) {
 			$(this).removeClass('calculate__active-btn');
@@ -325,9 +325,21 @@ var calculator = function(){
 		//тут ска
 
 		// var arr = $('.value__price span');
-		// var arr = $('.value__price span');
+		// var arr = $('.value__price').find('span');
+		// // arr = Number(arr);
+		//
+		// if (arr.is(':visible')) {
+		// 	// console.log(arr.filter(':odd'));
+		// 	arr.filter(':odd');
+		// 	// arr = (idValPrice * 30 / 100) - arr;
+		// 	arr = arr.text();
+		// 	arr = Number(arr);
+		// 	arr = (idValPrice * 30 / 100) - arr;
+		//
+		// 	console.log(arr);
+		// }
 
-		// // console.log(arr);
+
 		// Number(arr);
 
 		// for (i = 0; i < arr.length; i++) {
@@ -346,12 +358,21 @@ var calculator = function(){
 		// }
 
 		// if ($('.value__table').is(':visible').length == 2) {
-			
+
 		// }
+
+		// $('.value__table--visible').filter(':odd').addClass('hui');
+
+		// $('.value__table').each(function () {
+		// 	if ($(this).is(':visible')) {
+		// 		$('.value__table:visible').filter(':odd').addClass('hui');
+		// 	}
+		// })
+
 	})
 
 	idValPrice = $('#value__price span').text();
-	var idValPrice = Number(idValPrice);
+	idValPrice = Number(idValPrice);
 	// console.log(idValPrice);
 
 	$('.broken-glass').click(function(){
@@ -360,7 +381,8 @@ var calculator = function(){
 		var priceValue1 = Number(priceValue1);
 
 		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-1').fadeIn();
+			// $('.table-1').fadeIn();
+			$('.table-1').addClass('value__table--visible');
 			$('.table-1').find('.value__price span').text(priceValue1);
 
 			idValPrice += +priceValue1;
@@ -368,7 +390,8 @@ var calculator = function(){
 			$('#value__price span').text(idValPrice);
 
 		}else{
-			$('.table-1').fadeOut();
+			// $('.table-1').fadeOut();
+			$('.table-1').removeClass('value__table--visible');
 
 			idValPrice -= +priceValue1;
 
@@ -380,7 +403,8 @@ var calculator = function(){
 		var priceValue2 = $(this).data('price');
 		var priceValue2 = Number(priceValue2);
 		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-2').fadeIn();
+			// $('.table-2').fadeIn();
+			$('.table-2').addClass('value__table--visible');
 			$('.table-2').find('.value__price span').text(priceValue2);
 
 			idValPrice += +priceValue2;
@@ -389,7 +413,8 @@ var calculator = function(){
 
 			// idValPrice.val() + priceValue2;
 		}else{
-			$('.table-2').fadeOut();
+			// $('.table-2').fadeOut();
+			$('.table-2').removeClass('value__table--visible');
 			idValPrice -= +priceValue2;
 
 			$('#value__price span').text(idValPrice);
@@ -399,7 +424,8 @@ var calculator = function(){
 		var priceValue3 = $(this).data('price');
 		var priceValue3 = Number(priceValue3);
 		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-3').fadeIn();
+			// $('.table-3').fadeIn();
+			$('.table-3').addClass('value__table--visible');
 			$('.table-3').find('.value__price span').text(priceValue3);
 
 			idValPrice += +priceValue3;
@@ -407,7 +433,8 @@ var calculator = function(){
 			$('#value__price span').text(idValPrice);
 
 		}else{
-			$('.table-3').fadeOut();
+			// $('.table-3').fadeOut();
+			$('.table-3').removeClass('value__table--visible');
 			idValPrice -= +priceValue3;
 
 			$('#value__price span').text(idValPrice);
@@ -417,7 +444,8 @@ var calculator = function(){
 		var priceValue4 = $(this).data('price');
 		var priceValue4 = Number(priceValue4);
 		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-4').fadeIn();
+			// $('.table-4').fadeIn();
+			$('.table-4').addClass('value__table--visible');
 			$('.table-4').find('.value__price span').text(priceValue4);
 
 			idValPrice += +priceValue4;
@@ -425,7 +453,8 @@ var calculator = function(){
 			$('#value__price span').text(idValPrice);
 
 		}else{
-			$('.table-4').fadeOut();
+			// $('.table-4').fadeOut();
+			$('.table-4').removeClass('value__table--visible');
 			idValPrice -= +priceValue4;
 
 			$('#value__price span').text(idValPrice);
@@ -435,7 +464,8 @@ var calculator = function(){
 		var priceValue5 = $(this).data('price');
 		var priceValue5 = Number(priceValue5);
 		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-5').fadeIn();
+			// $('.table-5').fadeIn();
+			$('.table-5').addClass('value__table--visible');
 			$('.table-5').find('.value__price span').text(priceValue5);
 
 			idValPrice += +priceValue5;
@@ -443,7 +473,8 @@ var calculator = function(){
 			$('#value__price span').text(idValPrice);
 
 		}else{
-			$('.table-5').fadeOut();
+			// $('.table-5').fadeOut();
+			$('.table-5').removeClass('value__table--visible');
 			idValPrice -= +priceValue5;
 
 			$('#value__price span').text(idValPrice);
@@ -453,7 +484,8 @@ var calculator = function(){
 		var priceValue6 = $(this).data('price');
 		var priceValue6 = Number(priceValue6);
 		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-6').fadeIn();
+			// $('.table-6').fadeIn();
+			$('.table-6').addClass('value__table--visible');
 			$('.table-6').find('.value__price span').text(priceValue6);
 
 			idValPrice += +priceValue6;
@@ -461,7 +493,8 @@ var calculator = function(){
 			$('#value__price span').text(idValPrice);
 
 		}else{
-			$('.table-6').fadeOut();
+			// $('.table-6').fadeOut();
+			$('.table-6').removeClass('value__table--visible');
 			idValPrice -= +priceValue6;
 
 			$('#value__price span').text(idValPrice);
@@ -471,7 +504,7 @@ var calculator = function(){
 		var priceValue7 = $(this).data('price');
 		var priceValue7 = Number(priceValue7);
 		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-7').fadeIn();
+			$('.table-7').addClass('value__table--visible');
 			$('.table-7').find('.value__price span').text(priceValue7);
 
 			idValPrice += +priceValue7;
@@ -479,7 +512,7 @@ var calculator = function(){
 			$('#value__price span').text(idValPrice);
 
 		}else{
-			$('.table-7').fadeOut();
+			$('.table-7').removeClass('value__table--visible');
 			idValPrice -= +priceValue7;
 
 			$('#value__price span').text(idValPrice);
@@ -489,7 +522,7 @@ var calculator = function(){
 		var priceValue8 = $(this).data('price');
 		var priceValue8 = Number(priceValue8);
 		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-8').fadeIn();
+			$('.table-8').addClass('value__table--visible');
 			$('.table-8').find('.value__price span').text(priceValue8);
 
 			idValPrice += +priceValue8;
@@ -497,7 +530,7 @@ var calculator = function(){
 			$('#value__price span').text(idValPrice);
 
 		}else{
-			$('.table-8').fadeOut();
+			$('.table-8').removeClass('value__table--visible');
 			idValPrice -= +priceValue8;
 
 			$('#value__price span').text(idValPrice);
@@ -507,7 +540,7 @@ var calculator = function(){
 		var priceValue9 = $(this).data('price');
 		var priceValue9 = Number(priceValue9);
 		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-9').fadeIn();
+			$('.table-9').addClass('value__table--visible');
 			$('.table-9').find('.value__price span').text(priceValue9);
 
 			idValPrice += +priceValue9;
@@ -515,7 +548,7 @@ var calculator = function(){
 			$('#value__price span').text(idValPrice);
 
 		}else{
-			$('.table-9').fadeOut();
+			$('.table-9').removeClass('value__table--visible');
 			idValPrice -= +priceValue9;
 
 			$('#value__price span').text(idValPrice);
@@ -525,7 +558,7 @@ var calculator = function(){
 		var priceValue10 = $(this).data('price');
 		var priceValue10 = Number(priceValue10);
 		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-10').fadeIn();
+			$('.table-10').addClass('value__table--visible');
 			$('.table-10').find('.value__price span').text(priceValue10);
 
 			idValPrice += +priceValue10;
@@ -533,7 +566,7 @@ var calculator = function(){
 			$('#value__price span').text(idValPrice);
 
 		}else{
-			$('.table-10').fadeOut();
+			$('.table-10').removeClass('value__table--visible');
 			idValPrice -= +priceValue10;
 
 			$('#value__price span').text(idValPrice);
@@ -543,7 +576,7 @@ var calculator = function(){
 		var priceValue11 = $(this).data('price');
 		var priceValue11 = Number(priceValue11);
 		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-11').fadeIn();
+			$('.table-11').addClass('value__table--visible');
 			$('.table-11').find('.value__price span').text(priceValue11);
 
 			idValPrice += +priceValue11;
@@ -551,7 +584,7 @@ var calculator = function(){
 			$('#value__price span').text(idValPrice);
 
 		}else{
-			$('.table-11').fadeOut();
+			$('.table-11').removeClass('value__table--visible');
 			idValPrice -= +priceValue11;
 
 			$('#value__price span').text(idValPrice);
@@ -595,6 +628,22 @@ var calculator = function(){
 		// if ($('.value__table').is(':visible').length == 0) {
 		// 	$('.value__block-wrap--hidden').fadeOut();
 		// }
+	})
+
+	$('.calculate__item').click(function () {
+		// (Number() * 30) / 100;
+		$('.value__table--visible').filter(':odd').addClass('hui');
+
+		$('.hui').each(function () {
+			var obj = $(this).find('.value__price span').text();
+			Number(obj);
+			var obj1 = (obj * 30) / 100;
+			var obj = obj - obj1;
+			console.log(obj);
+			$(this).find('.value__price span').text(obj);
+			return obj = false;
+		})
+
 	})
 
 }

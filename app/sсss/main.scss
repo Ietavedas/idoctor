@@ -383,7 +383,7 @@ a.top-full__contact-text{
 		font-size: 18px;
 		color: #484848;
 		position: relative;
-		
+
 		&:before{
 			content: "";
 			position: absolute;
@@ -457,8 +457,8 @@ a.top-full__contact-text{
 			display: flex;
 			flex-direction: column;
 			// border: 1px solid #e8e8e8;
-			border-right: 1px solid #e8e8e8;	
-			
+			border-right: 1px solid #e8e8e8;
+
 			// padding-top: 30px;
 			// padding-bottom: 30px;
 			// width: 100%;
@@ -714,7 +714,7 @@ a.top-full__contact-text{
 		border: 1px solid #d8c5bc;
 		transition: .3s;
 		span{
-			
+
 			font-family: $hncb;
 		}
 	}
@@ -722,7 +722,7 @@ a.top-full__contact-text{
 	&__price{
 		display: flex;
 		align-items: flex-end;
-		
+
 		span{
 			color: #127f9b;
 			// font-size: 45px;
@@ -772,6 +772,10 @@ a.top-full__contact-text{
 			transition: .3s;
 		}
 	}
+}
+
+.value__table--visible{
+	display: block;
 }
 
 .value__block-wrap--hidden{
@@ -975,7 +979,7 @@ a.top-full__contact-text{
 	}
 
 	&__desc{
-	    max-width: 154px;	
+	    max-width: 154px;
 		text-align: center;
 		font-family: $hncl;
 		// width: 100%;
@@ -1318,7 +1322,7 @@ a.top-full__contact-text{
 
 	&__block{
 		width: 30%;
-		
+
 		&:nth-child(2){
 			padding-left: 9%;
 		}
