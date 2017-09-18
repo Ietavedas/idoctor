@@ -4,36 +4,23 @@ setSize();
 
 buttonsWidth();
 
-// if ($(window).outerWidth() < 1080) {
-// 	$('.method__images').addClass('js-method');
-// }else{
-// 	$('.method__images').removeClass('js-method');
-// }
-
-	slidesMethod();
-// if($(window).outerWidth() < 769){
-// }
-
-
+slidesMethod();
 
 $(window).resize(function(){
 	setSize();
 
-
-
-	if ($(window).outerWidth() > 480) {
+	if ($(window).outerWidth() > 769) {
 		slidesMethodUnslick();
 	}else{
 		slidesMethod();
 	}
 })
 
-
 function setSize(){
 	var windowWindth = $(window).outerWidth();
 	var windowHeight = $(window).height();
 
-	if (windowWindth > 1080) {
+	if (windowWindth > 780) {
 		$('.js-wrap').css({
 			'width' : windowWindth,
 			'height' : windowHeight
@@ -66,6 +53,15 @@ $('.slider').slick({
 	appendArrows: $('.slider-control')
 });
 
+$('.mobile-slider').slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: false,
+	autoplay: true,
+	autoplaySpeed: 2000,
+	arrows: true,
+});
+
 function slidesMethod(){
 
 
@@ -78,11 +74,19 @@ $('.method__images').slick({
 			settings: "unslick"
 		},
 		{
+			breakpoint: 769,
+			settings: {
+				slidesToShow     : 2,
+				slidesToScroll   : 1,
+				arrows           : true
+			}
+		},
+		{
 			breakpoint: 480,
 			settings: {
 				slidesToShow     : 1,
 				slidesToScroll   : 1,
-				arrows           : false
+				arrows           : true
 			}
 		}
 	]
@@ -101,7 +105,15 @@ $('.about').slick({
 			settings: {
 				slidesToShow     : 1,
 				slidesToScroll   : 1,
-				arrows           : false
+				arrows           : true
+			}
+		},
+		{
+			breakpoint: 769,
+			settings: {
+				slidesToShow     : 2,
+				slidesToScroll   : 1,
+				arrows           : true
 			}
 		}
 	]
@@ -114,9 +126,6 @@ function slidesMethodUnslick(){
 	$('.method__images').slick('unslick');
 	$('.about').slick('unslick');
 }
-
-
-
 
 
 function buttonsWidth(){
@@ -153,6 +162,8 @@ $('#morphing').fancybox();
 $('#toRecall').fancybox();
 $('#toRecall2').fancybox();
 $('#toRecall3').fancybox();
+$('#toRecallMobile').fancybox();
+$('#toRecallRemont').fancybox();
 
 
 // $('#mainForm').validate({
@@ -247,7 +258,7 @@ var calculator = function(){
 
 
 	function getDatePrice(){
-		// var crackedScreen = $(this).parent('.js-iphoneModel').find('.active-btn').data('cracked-screen');
+
 		crackedScreen = _this.data("cracked-screen"),
 		housing = _this.data("housing"),
 		microphone = _this.data("microphone"),
@@ -259,45 +270,47 @@ var calculator = function(){
 		battery = _this.data("battery"),
 		photoCamera = _this.data("photo-camera"),
 		other = _this.data("other");
-		// var crackedScreen = _this.data();
-		// console.log(crackedScreen);
+
+		ch_crackedScreen = _this.data("ch-cracked-screen"),
+		ch_housing = _this.data("ch-housing"),
+		ch_microphone = _this.data("ch-microphone"),
+		ch_homeButton = _this.data("ch-home-button"),
+		ch_brokenGlass = _this.data("ch-broken-glass"),
+		ch_diagnostics = _this.data("ch-diagnostics"),
+		ch_powerButton = _this.data("ch-power-button"),
+		ch_quietSound = _this.data("ch-quiet-sound"),
+		ch_battery = _this.data("ch-battery"),
+		ch_photoCamera = _this.data("ch-photo-camera"),
+		ch_other = _this.data("ch-other");
 
 		return putDatePrice();
 	}
 
 	function putDatePrice(){
-		$('.cracked-screen').attr('data-price', crackedScreen);
-		$('.housing').attr('data-price', housing);
-		$('.microphone').attr('data-price', microphone);
-		$('.home-button').attr('data-price', homeButton);
-		$('.broken-glass').attr('data-price', brokenGlass);
-		$('.diagnostics').attr('data-price', diagnostics);
-		$('.power-button').attr('data-price', powerButton);
-		$('.quiet-sound').attr('data-price', quietSound);
-		$('.battery').attr('data-price', battery);
-		$('.photo-camera').attr('data-price', photoCamera);
-		$('.other').attr('data-price', other);
+		$('.cracked-screen').attr('data-price', crackedScreen).attr('data-ch-price', ch_crackedScreen);
+		$('.housing').attr('data-price', housing).attr('data-ch-price', ch_housing);
+		$('.microphone').attr('data-price', microphone).attr('data-ch-price', ch_microphone);
+		$('.home-button').attr('data-price', homeButton).attr('data-ch-price', ch_homeButton);
+		$('.broken-glass').attr('data-price', brokenGlass).attr('data-ch-price', ch_brokenGlass);
+		$('.diagnostics').attr('data-price', diagnostics).attr('data-ch-price', ch_diagnostics);
+		$('.power-button').attr('data-price', powerButton).attr('data-ch-price', ch_powerButton);
+		$('.quiet-sound').attr('data-price', quietSound).attr('data-ch-price', ch_quietSound);
+		$('.battery').attr('data-price', battery).attr('data-ch-price', ch_battery);
+		$('.photo-camera').attr('data-price', photoCamera).attr('data-ch-price', ch_photoCamera);
+		$('.other').attr('data-price', other).attr('data-ch-price', ch_other);
 	}
 
 	$('.calculate__item').click(function(){
-		// var priceValue = $(this).data('price');
-		// var counter = 0;
-
-		// $('.value__price span').text(priceValue);
-
 
 		if ($(this).hasClass('calculate__active-btn')) {
 			$(this).removeClass('calculate__active-btn');
-			// var counter = $('.calculate__active-btn').length;
-			// $(this).find('.calculate__counter').text(counter);
+
 			var i = 0;
 			$('.calculate__active-btn').each(function(){
 				i++;
 				$(this).find('.calculate__counter').text(i)
 			})
-				// for( var i=0; i<=counter; i++){
-				// 	$('.calculate__counter').text(i);
-				// }
+
 		}else{
 			$(this).addClass('calculate__active-btn');
 			var counter = $('.calculate__active-btn').length;
@@ -322,329 +335,116 @@ var calculator = function(){
 			$('.value__block-wrap--hidden').fadeOut();
 		}
 
-		//тут ска
+		var counterDiscount = $(this).find('.calculate__counter').text();
+			counterDiscount = Number(counterDiscount);
 
-		// var arr = $('.value__price span');
-		// var arr = $('.value__price').find('span');
-		// // arr = Number(arr);
-		//
-		// if (arr.is(':visible')) {
-		// 	// console.log(arr.filter(':odd'));
-		// 	arr.filter(':odd');
-		// 	// arr = (idValPrice * 30 / 100) - arr;
-		// 	arr = arr.text();
-		// 	arr = Number(arr);
-		// 	arr = (idValPrice * 30 / 100) - arr;
-		//
-		// 	console.log(arr);
-		// }
+		var elem = $(this).data('id'); // этот атрибут равен текущему счетчику кнопок в калькуляторе
 
+		if ($(this).hasClass('calculate__active-btn')){
+			if (counterDiscount % 2 == 0) {
 
-		// Number(arr);
+				var qqq = $(this).data('price'); // США
+				qqq = Number(qqq);
+				var yyy = $(this).data('ch-price'); // Китай
+				yyy = Number(yyy);
 
-		// for (i = 0; i < arr.length; i++) {
+				var obj1 = (qqq * 30) / 100;
+				var qqq = qqq - obj1; // посчитали цену США
 
-		// 	parseFloat(arr[i]);
-		// 	console.log(arr[i]);
+				var obj2 = (yyy * 30) / 100;
+				var yyy = yyy - obj2; // посчитали цену Китай
 
-		// 	if ( arr[i] % 2 == 0 ) {
+				$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-us').attr('data-price', qqq); // записываем цену в атрибут для кнопки США
+				$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-ch').attr('data-ch-price', yyy); // записываем цену в атрибут для кнопки Китай
 
-		// 		// console.log( arr[i] );
+				$('.value__table[data-id="' + elem + '"]').fadeIn();
+				$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq); // по дефолту записываем цену США
 
-		// 		// console.log('!!!');
+			}else{
+				var qqq = $(this).data('price');
+				qqq = Number(qqq);
+				var yyy = $(this).data('ch-price');
 
-		// 	}
+				$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-us').attr('data-price', qqq);
+				$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-ch').attr('data-ch-price', yyy);
 
-		// }
+				$('.value__table[data-id="' + elem + '"]').fadeIn();
+				$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq);
+			}
+			var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text();
+			endPrice = Number(endPrice);
 
-		// if ($('.value__table').is(':visible').length == 2) {
-
-		// }
-
-		// $('.value__table--visible').filter(':odd').addClass('hui');
-
-		// $('.value__table').each(function () {
-		// 	if ($(this).is(':visible')) {
-		// 		$('.value__table:visible').filter(':odd').addClass('hui');
-		// 	}
-		// })
-
-	})
-
-	idValPrice = $('#value__price span').text();
-	idValPrice = Number(idValPrice);
-	// console.log(idValPrice);
-
-	$('.broken-glass').click(function(){
-
-		var priceValue1 = $(this).data('price');
-		var priceValue1 = Number(priceValue1);
-
-		if ($(this).hasClass('calculate__active-btn')) {
-			// $('.table-1').fadeIn();
-			$('.table-1').addClass('value__table--visible');
-			$('.table-1').find('.value__price span').text(priceValue1);
-
-			idValPrice += +priceValue1;
-
+			var idValPrice = $('#value__price span').text();
+			idValPrice = Number(idValPrice);
+			idValPrice += endPrice;
 			$('#value__price span').text(idValPrice);
-
 		}else{
-			// $('.table-1').fadeOut();
-			$('.table-1').removeClass('value__table--visible');
+			$('.value__table[data-id="' + elem + '"]').fadeOut();
 
-			idValPrice -= +priceValue1;
+			var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text();
+			endPrice = Number(endPrice);
 
+			var idValPrice = $('#value__price span').text();
+			idValPrice = Number(idValPrice);
+			idValPrice -= endPrice;
 			$('#value__price span').text(idValPrice);
 		}
-	})
-	$('.cracked-screen').click(function(){
 
-		var priceValue2 = $(this).data('price');
-		var priceValue2 = Number(priceValue2);
-		if ($(this).hasClass('calculate__active-btn')) {
-			// $('.table-2').fadeIn();
-			$('.table-2').addClass('value__table--visible');
-			$('.table-2').find('.value__price span').text(priceValue2);
-
-			idValPrice += +priceValue2;
-
-			$('#value__price span').text(idValPrice);
-
-			// idValPrice.val() + priceValue2;
-		}else{
-			// $('.table-2').fadeOut();
-			$('.table-2').removeClass('value__table--visible');
-			idValPrice -= +priceValue2;
-
-			$('#value__price span').text(idValPrice);
-		}
-	})
-	$('.battery').click(function(){
-		var priceValue3 = $(this).data('price');
-		var priceValue3 = Number(priceValue3);
-		if ($(this).hasClass('calculate__active-btn')) {
-			// $('.table-3').fadeIn();
-			$('.table-3').addClass('value__table--visible');
-			$('.table-3').find('.value__price span').text(priceValue3);
-
-			idValPrice += +priceValue3;
-
-			$('#value__price span').text(idValPrice);
-
-		}else{
-			// $('.table-3').fadeOut();
-			$('.table-3').removeClass('value__table--visible');
-			idValPrice -= +priceValue3;
-
-			$('#value__price span').text(idValPrice);
-		};
-	})
-	$('.diagnostics').click(function(){
-		var priceValue4 = $(this).data('price');
-		var priceValue4 = Number(priceValue4);
-		if ($(this).hasClass('calculate__active-btn')) {
-			// $('.table-4').fadeIn();
-			$('.table-4').addClass('value__table--visible');
-			$('.table-4').find('.value__price span').text(priceValue4);
-
-			idValPrice += +priceValue4;
-
-			$('#value__price span').text(idValPrice);
-
-		}else{
-			// $('.table-4').fadeOut();
-			$('.table-4').removeClass('value__table--visible');
-			idValPrice -= +priceValue4;
-
-			$('#value__price span').text(idValPrice);
-		}
-	})
-	$('.power-button').click(function(){
-		var priceValue5 = $(this).data('price');
-		var priceValue5 = Number(priceValue5);
-		if ($(this).hasClass('calculate__active-btn')) {
-			// $('.table-5').fadeIn();
-			$('.table-5').addClass('value__table--visible');
-			$('.table-5').find('.value__price span').text(priceValue5);
-
-			idValPrice += +priceValue5;
-
-			$('#value__price span').text(idValPrice);
-
-		}else{
-			// $('.table-5').fadeOut();
-			$('.table-5').removeClass('value__table--visible');
-			idValPrice -= +priceValue5;
-
-			$('#value__price span').text(idValPrice);
-		}
-	})
-	$('.quiet-sound').click(function(){
-		var priceValue6 = $(this).data('price');
-		var priceValue6 = Number(priceValue6);
-		if ($(this).hasClass('calculate__active-btn')) {
-			// $('.table-6').fadeIn();
-			$('.table-6').addClass('value__table--visible');
-			$('.table-6').find('.value__price span').text(priceValue6);
-
-			idValPrice += +priceValue6;
-
-			$('#value__price span').text(idValPrice);
-
-		}else{
-			// $('.table-6').fadeOut();
-			$('.table-6').removeClass('value__table--visible');
-			idValPrice -= +priceValue6;
-
-			$('#value__price span').text(idValPrice);
-		}
-	})
-	$('.photo-camera').click(function(){
-		var priceValue7 = $(this).data('price');
-		var priceValue7 = Number(priceValue7);
-		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-7').addClass('value__table--visible');
-			$('.table-7').find('.value__price span').text(priceValue7);
-
-			idValPrice += +priceValue7;
-
-			$('#value__price span').text(idValPrice);
-
-		}else{
-			$('.table-7').removeClass('value__table--visible');
-			idValPrice -= +priceValue7;
-
-			$('#value__price span').text(idValPrice);
-		}
-	})
-	$('.home-button').click(function(){
-		var priceValue8 = $(this).data('price');
-		var priceValue8 = Number(priceValue8);
-		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-8').addClass('value__table--visible');
-			$('.table-8').find('.value__price span').text(priceValue8);
-
-			idValPrice += +priceValue8;
-
-			$('#value__price span').text(idValPrice);
-
-		}else{
-			$('.table-8').removeClass('value__table--visible');
-			idValPrice -= +priceValue8;
-
-			$('#value__price span').text(idValPrice);
-		}
-	})
-	$('.microphone').click(function(){
-		var priceValue9 = $(this).data('price');
-		var priceValue9 = Number(priceValue9);
-		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-9').addClass('value__table--visible');
-			$('.table-9').find('.value__price span').text(priceValue9);
-
-			idValPrice += +priceValue9;
-
-			$('#value__price span').text(idValPrice);
-
-		}else{
-			$('.table-9').removeClass('value__table--visible');
-			idValPrice -= +priceValue9;
-
-			$('#value__price span').text(idValPrice);
-		}
-	})
-	$('.housing').click(function(){
-		var priceValue10 = $(this).data('price');
-		var priceValue10 = Number(priceValue10);
-		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-10').addClass('value__table--visible');
-			$('.table-10').find('.value__price span').text(priceValue10);
-
-			idValPrice += +priceValue10;
-
-			$('#value__price span').text(idValPrice);
-
-		}else{
-			$('.table-10').removeClass('value__table--visible');
-			idValPrice -= +priceValue10;
-
-			$('#value__price span').text(idValPrice);
-		}
-	})
-	$('.other').click(function(){
-		var priceValue11 = $(this).data('price');
-		var priceValue11 = Number(priceValue11);
-		if ($(this).hasClass('calculate__active-btn')) {
-			$('.table-11').addClass('value__table--visible');
-			$('.table-11').find('.value__price span').text(priceValue11);
-
-			idValPrice += +priceValue11;
-
-			$('#value__price span').text(idValPrice);
-
-		}else{
-			$('.table-11').removeClass('value__table--visible');
-			idValPrice -= +priceValue11;
-
-			$('#value__price span').text(idValPrice);
-		}
 	})
 
 	$('.value__close').on('click', function(){
+		var elem = $(this).parents('.value__table').data('id');
+		$(this).parents('.value__table').fadeOut();
 
-		var _this_1 = $('.broken-glass'),
-		 _this_2 = $('.cracked-screen'),
-		 _this_3 = $('.battery'),
-		 _this_4 = $('.diagnostics'),
-		 _this_5 = $('.power-button'),
-		 _this_6 = $('.quiet-sound'),
-		 _this_7 = $('.photo-camera'),
-		 _this_8 = $('.home-button'),
-		 _this_9 = $('.microphone'),
-		 _this_10 = $('.housing'),
-		 _this_11 = $('.other');
+		$('.calculate__item[data-id="' + elem + '"]').removeClass('calculate__active-btn');
 
-		rmPrice = $(this).parent('.value__table').find('.value__price span').text();
+		var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text();
+		endPrice = Number(endPrice);
 
-		idValPrice -= +rmPrice;
-
+		var idValPrice = $('#value__price span').text();
+		idValPrice = Number(idValPrice);
+		idValPrice -= endPrice;
 		$('#value__price span').text(idValPrice);
+	});
 
-		if ( $(this).parent().hasClass('table-1') ) { _this_1.removeClass('calculate__active-btn') }
-		if ( $(this).parent().hasClass('table-2') ) { _this_2.removeClass('calculate__active-btn') }
-		if ( $(this).parent().hasClass('table-3') ) { _this_3.removeClass('calculate__active-btn') }
-		if ( $(this).parent().hasClass('table-4') ) { _this_4.removeClass('calculate__active-btn') }
-		if ( $(this).parent().hasClass('table-5') ) { _this_5.removeClass('calculate__active-btn') }
-		if ( $(this).parent().hasClass('table-6') ) { _this_6.removeClass('calculate__active-btn') }
-		if ( $(this).parent().hasClass('table-7') ) { _this_7.removeClass('calculate__active-btn') }
-		if ( $(this).parent().hasClass('table-8') ) { _this_8.removeClass('calculate__active-btn') }
-		if ( $(this).parent().hasClass('table-9') ) { _this_9.removeClass('calculate__active-btn') }
-		if ( $(this).parent().hasClass('table-10') ) { _this_10.removeClass('calculate__active-btn') }
-		if ( $(this).parent().hasClass('table-11') ) { _this_11.removeClass('calculate__active-btn') }
 
-		$(this).parent().fadeOut();
+	$('.value__ebala').find('.value__item-wrap-us').click(function(){
+		$(this).addClass('active-btn').siblings().removeClass('active-btn');
 
-		// if ($('.value__table').is(':visible').length == 0) {
-		// 	$('.value__block-wrap--hidden').fadeOut();
-		// }
-	})
+		var dataUSA = $(this).parents('.value__table').find('.value__item-wrap-us').data('price');
+		var dataCH = $(this).parents('.value__table').find('.value__item-wrap-ch').data('ch-price');
+		var idValPrice = $('#value__price span').text();
 
-	$('.calculate__item').click(function () {
-		// (Number() * 30) / 100;
-		$('.value__table--visible').filter(':odd').addClass('hui');
+		$(this).parents('.value__table').find('.value__price span').text(dataUSA);
 
-		$('.hui').each(function () {
-			var obj = $(this).find('.value__price span').text();
-			Number(obj);
-			var obj1 = (obj * 30) / 100;
-			var obj = obj - obj1;
-			console.log(obj);
-			$(this).find('.value__price span').text(obj);
-			return obj = false;
-		})
+		if ($(this).hasClass('active-btn')) {
+			dataUSA = Number(dataUSA);
+			dataCH = Number(dataCH);
+			idValPrice = Number(idValPrice);
+			idValPrice += dataUSA - dataCH;
+			$('#value__price span').text(idValPrice);
+		}
+	});
 
-	})
+	$('.value__ebala').find('.value__item-wrap-ch').click(function(){
+		$(this).addClass('active-btn').siblings().removeClass('active-btn');
+
+		var dataUSA = $(this).parents('.value__table').find('.value__item-wrap-us').data('price');
+		var dataCH = $(this).parents('.value__table').find('.value__item-wrap-ch').data('ch-price');
+		var idValPrice = $('#value__price span').text();
+
+		console.log(dataCH);
+
+		$(this).parents('.value__table').find('.value__price span').text(dataCH);
+
+		if ($(this).hasClass('active-btn')) {
+			dataCH = Number(dataCH);
+			dataUSA = Number(dataUSA);
+			idValPrice = Number(idValPrice);
+			idValPrice += dataCH - dataUSA;
+			$('#value__price span').text(idValPrice);
+		}
+	});
 
 }
 
