@@ -462,6 +462,24 @@ a.top-full__contact-text{
 		}
 	}
 
+	&__summ{
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		padding-right: 10%;
+		border-left: 1px solid #e8e8e8;
+		border-bottom: 1px solid #e8e8e8;
+		border-right: 1px solid #e8e8e8;
+
+		.value__title{
+			margin-right: 10px;
+		}
+	}
+
 	&__table{
 		// display: flex;
 		display: none;
@@ -610,6 +628,8 @@ a.top-full__contact-text{
 		&--right{
 			float: right;
 			position: relative;
+			// transform: translateX(-40%);
+			// margin-right: 30%;
 
 			.value__price{
 				display: inline-block;
@@ -623,9 +643,36 @@ a.top-full__contact-text{
 			}
 
 			&:before{
-				content: url(../images/arrow.png);
+				// content: url(../images/arrow.png);
 				position: absolute;
 				left: -60%;
+			}
+		}
+
+		#culcForm{
+			width: 100%;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.recall__phone-wrap{
+		    border-bottom: 2px solid #e8e8e8;
+				margin-top: 0;
+			}
+
+			.recall__phone{}
+
+			.btn{
+				margin-top: 0;
+				margin-bottom: 0;
+				background: #fff;
+				color: #000;
+
+				&:hover{
+					background: linear-gradient(to right, #4e5d84 20%, #2989a5 80%);
+					color: #fff;
+				}
 			}
 		}
 	}
@@ -1123,7 +1170,7 @@ a.top-full__contact-text{
 	// flex-wrap: wrap;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	position: relative;	
+	position: relative;
 
 	&__column{
 		// flex: 1 1 100%;
@@ -1631,7 +1678,7 @@ a.top-full__contact-text{
 				left: 0;
 				height: 2px;
 				width: 100%;
-				background: linear-gradient(to right, #9f6750 40%, #1c9bb1 60%);;
+				background: linear-gradient(to right, #9f6750 40%, #1c9bb1 60%);
 		    }
 	}
 }
