@@ -301,17 +301,19 @@ var calculator = function(){
 		$('.other').attr('data-price', other).attr('data-ch-price', ch_other);
 	}
 
-	$('.calculate__item').click(function(){
+	$('.act').on('click', function(e){
+
+		$(this).removeClass('act');
 
 		if ($(this).hasClass('calculate__active-btn')) {
-			$(this).removeClass('calculate__active-btn');
+			// $(this).removeClass('calculate__active-btn');
 
 			var i = 0;
 			$('.calculate__active-btn').each(function(){
 
 				i++;
 				$(this).find('.calculate__counter').text(i);
-				console.log(i);
+				// console.log(i);
 				var counterRemDiscount = $(this).find('.calculate__counter').text();
 					counterRemDiscount = Number(counterRemDiscount);
 
@@ -384,9 +386,9 @@ var calculator = function(){
 			if (counterDiscount % 2 == 0) {
 
 				var qqq = $(this).data('price'); // США
-				qqq = Number(qqq);
+				var qqq = Number(qqq);
 				var yyy = $(this).data('ch-price'); // Китай
-				yyy = Number(yyy);
+				var yyy = Number(yyy);
 
 				var obj1 = (qqq * 30) / 100;
 				var qqq = qqq - obj1; // посчитали цену США
@@ -399,10 +401,19 @@ var calculator = function(){
 
 				$('.value__table[data-id="' + elem + '"]').fadeIn();
 				$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq); // по дефолту записываем цену США
+				$('.value__table[data-id="' + elem + '"]').find('.value__price span').attr("data-s", qqq);
+				// var qqq = 0;
+				var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text();
+			    var endPrice = Number(endPrice);
 
+
+			var idValPrice = $('#value__price span').text();
+			var idValPrice = Number(idValPrice);
+			var idValPrice = idValPrice + endPrice;
+			$('#value__price span').text(idValPrice);
 			}else{
 				var qqq = $(this).data('price');
-				qqq = Number(qqq);
+				var qqq = Number(qqq);
 				var yyy = $(this).data('ch-price');
 
 				$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-us').attr('data-price', qqq);
@@ -410,33 +421,299 @@ var calculator = function(){
 
 				$('.value__table[data-id="' + elem + '"]').fadeIn();
 				$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq);
-			}
-			var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text();
-			endPrice = Number(endPrice);
+				$('.value__table[data-id="' + elem + '"]').find('.value__price span').attr("data-s", qqq);
+			// var qqq = 0;
+				var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text();
+				var endPrice = Number(endPrice);
+				// console.log(qqq);
 
-			var idValPrice = $('#value__price span').text();
-			idValPrice = Number(idValPrice);
-			idValPrice += endPrice;
-			$('#value__price span').text(idValPrice);
+				var idValPrice = $('#value__price span').text();
+				var idValPrice = Number(idValPrice);
+				var idValPrice = idValPrice + endPrice;
+				$('#value__price span').text(idValPrice);
+				}
+			// if ($(this).hasClass('act')) {
+			// }
+			$(this).unbind('click');
 		}else{
-			$('.value__table[data-id="' + elem + '"]').fadeOut();
+			// $('#value__price span').text(idValPrice);
+			// e.preventDefault;
+			// var qqq = $(this).data('price'); // США
+			// 	var qqq = Number(qqq);
+			// 	var yyy = $(this).data('ch-price'); // Китай
+			// 	var yyy = Number(yyy);
 
-			var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text();
-			endPrice = Number(endPrice);
 
-			var idValPrice = $('#value__price span').text();
-			idValPrice = Number(idValPrice);
-			idValPrice -= endPrice;
-			$('#value__price span').text(idValPrice);
+				// console.log(qqq);
+				// var qqq = (qqq * 100) / 70;
+				// var qqq = qqq - obj1; // посчитали цену США
+
+				// var yyy = (yyy * 100) / 70;
+				// var yyy = yyy - obj2; // посчитали цену Китай
+
+
+
+			// 	$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-us').attr('data-price', qqq);
+			// 	$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-ch').attr('data-ch-price', yyy);
+			// $('.value__table[data-id="' + elem + '"]').fadeOut();
+			// $('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq);
+			// $('.value__table[data-id="' + elem + '"]').find('.value__price span').attr("data-s", qqq);
+
+
+
+			// var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq);
+			// var endPrice = Number(qqq);
+
+			// var idValPrice = $('#value__price span').text();
+			// var idValPrice = Number(idValPrice);
+			// var idValPrice = idValPrice - endPrice;
+			// $('#value__price span').text(idValPrice);
+			// // console.log(endPrice);
+
+			// var zalupa = 0;
+			// var Dzalupa = 0;
+
+			// $('.value__table[data-id="' + elem + '"]:visible').find('.value__price span').each(function(){
+			// 	var zalupa = +$(this).text();
+			// 	// var zalupa = Number(zalupa);
+			// 	Dzalupa += zalupa;
+			// 	console.log(Dzalupa);
+
+			// 	// zalupa += huhu;
+			// })
+
+			
 		}
 
+		// var zalupa = 0;
+
+		// $('.value__price span').each(function(){
+		// 	var huhu = $(this).text();
+		// 	var huhu = Number(huhu);
+		// 	console.log(huhu);
+
+		// 	zalupa += huhu;
+		// })
+
+		// $('#value__price span').text(zalupa);
+
 	})
+
+	// $('.calculate__active-btn').on('click', function(){
+	// 	var elem = $(this).data('id');
+	// 		$('.value__table[data-id="' + elem + '"]').fadeOut();
+
+	// 		var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text();
+	// 		endPrice = Number(endPrice);
+
+	// 		var idValPrice = $('#value__price span').text();
+	// 		idValPrice = Number(idValPrice);
+	// 		idValPrice -= endPrice;
+	// 		$('#value__price span').text(idValPrice);
+	// })
 
 	$('.value__close').on('click', function(){
 		var elem = $(this).parents('.value__table').data('id');
 		$(this).parents('.value__table').fadeOut();
 
 		$('.calculate__item[data-id="' + elem + '"]').removeClass('calculate__active-btn');
+		$('.calculate__item[data-id="' + elem + '"]').bind('click', function(e){
+
+		$(this).removeClass('act');
+
+		if ($(this).hasClass('calculate__active-btn')) {
+			// $(this).removeClass('calculate__active-btn');
+
+			var i = 0;
+			$('.calculate__active-btn').each(function(){
+
+				i++;
+				$(this).find('.calculate__counter').text(i);
+				// console.log(i);
+				var counterRemDiscount = $(this).find('.calculate__counter').text();
+					counterRemDiscount = Number(counterRemDiscount);
+
+				var elem = $(this).data('id'); // этот атрибут равен текущему счетчику кнопок в калькуляторе
+
+				if (counterRemDiscount % 2 == 0) {
+
+					var qqq = $(this).data('price'); // США
+					qqq = Number(qqq);
+					var yyy = $(this).data('ch-price'); // Китай
+					yyy = Number(yyy);
+
+					var obj1 = (qqq * 30) / 100;
+					var qqq = qqq - obj1; // посчитали цену США
+
+					var obj2 = (yyy * 30) / 100;
+					var yyy = yyy - obj2; // посчитали цену Китай
+
+					$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-us').attr('data-price', qqq); // записываем цену в атрибут для кнопки США
+					$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-ch').attr('data-ch-price', yyy); // записываем цену в атрибут для кнопки Китай
+
+					// $('.value__table[data-id="' + elem + '"]').fadeIn();
+					$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq); // по дефолту записываем цену США
+				}else {
+					var qqq = $(this).data('price'); // США
+					qqq = Number(qqq);
+					var yyy = $(this).data('ch-price'); // Китай
+					yyy = Number(yyy);
+
+					$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-us').attr('data-price', qqq); // записываем цену в атрибут для кнопки США
+					$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-ch').attr('data-ch-price', yyy); // записываем цену в атрибут для кнопки Китай
+
+					// $('.value__table[data-id="' + elem + '"]').fadeIn();
+					$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq); 
+				}
+			})
+
+		}else{
+			$(this).addClass('calculate__active-btn');
+			var counter = $('.calculate__active-btn').length;
+			$(this).find('.calculate__counter').text(counter);
+		}
+
+		var counter = $('.calculate__active-btn').length;
+
+		if (counter > 0) {
+			$('.calculate__discount-wrap').animate({
+				opacity: 1
+			}, 300);
+		}else{
+			$('.calculate__discount-wrap').animate({
+				opacity: 0
+			}, 300);
+		}
+
+		if ($('.calculate__item').hasClass('calculate__active-btn')) {
+			$('.value__block-wrap--hidden').fadeIn();
+			$('.recall-fon').fadeOut();
+		}else{
+			$('.value__block-wrap--hidden').fadeOut();
+			$('.recall-fon').fadeIn();
+		}
+
+		var counterDiscount = $(this).find('.calculate__counter').text();
+			counterDiscount = Number(counterDiscount);
+
+		var elem = $(this).data('id'); // этот атрибут равен текущему счетчику кнопок в калькуляторе
+
+		if ($(this).hasClass('calculate__active-btn')){
+			if (counterDiscount % 2 == 0) {
+
+				var qqq = $(this).data('price'); // США
+				var qqq = Number(qqq);
+				var yyy = $(this).data('ch-price'); // Китай
+				var yyy = Number(yyy);
+
+				var obj1 = (qqq * 30) / 100;
+				var qqq = qqq - obj1; // посчитали цену США
+
+				var obj2 = (yyy * 30) / 100;
+				var yyy = yyy - obj2; // посчитали цену Китай
+
+				$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-us').attr('data-price', qqq); // записываем цену в атрибут для кнопки США
+				$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-ch').attr('data-ch-price', yyy); // записываем цену в атрибут для кнопки Китай
+
+				$('.value__table[data-id="' + elem + '"]').fadeIn();
+				$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq); // по дефолту записываем цену США
+				$('.value__table[data-id="' + elem + '"]').find('.value__price span').attr("data-s", qqq);
+				// var qqq = 0;
+				var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text();
+			    var endPrice = Number(endPrice);
+
+
+			var idValPrice = $('#value__price span').text();
+			var idValPrice = Number(idValPrice);
+			var idValPrice = idValPrice + endPrice;
+			$('#value__price span').text(idValPrice);
+			}else{
+				var qqq = $(this).data('price');
+				var qqq = Number(qqq);
+				var yyy = $(this).data('ch-price');
+
+				$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-us').attr('data-price', qqq);
+				$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-ch').attr('data-ch-price', yyy);
+
+				$('.value__table[data-id="' + elem + '"]').fadeIn();
+				$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq);
+				$('.value__table[data-id="' + elem + '"]').find('.value__price span').attr("data-s", qqq);
+			// var qqq = 0;
+				var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text();
+				var endPrice = Number(endPrice);
+				// console.log(qqq);
+
+				var idValPrice = $('#value__price span').text();
+				var idValPrice = Number(idValPrice);
+				var idValPrice = idValPrice + endPrice;
+				$('#value__price span').text(idValPrice);
+				}
+			// if ($(this).hasClass('act')) {
+			// }
+			$(this).unbind('click');
+		}else{
+			// $('#value__price span').text(idValPrice);
+			// e.preventDefault;
+			// var qqq = $(this).data('price'); // США
+			// 	var qqq = Number(qqq);
+			// 	var yyy = $(this).data('ch-price'); // Китай
+			// 	var yyy = Number(yyy);
+
+
+				// console.log(qqq);
+				// var qqq = (qqq * 100) / 70;
+				// var qqq = qqq - obj1; // посчитали цену США
+
+				// var yyy = (yyy * 100) / 70;
+				// var yyy = yyy - obj2; // посчитали цену Китай
+
+
+
+			// 	$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-us').attr('data-price', qqq);
+			// 	$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-ch').attr('data-ch-price', yyy);
+			// $('.value__table[data-id="' + elem + '"]').fadeOut();
+			// $('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq);
+			// $('.value__table[data-id="' + elem + '"]').find('.value__price span').attr("data-s", qqq);
+
+
+
+			// var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq);
+			// var endPrice = Number(qqq);
+
+			// var idValPrice = $('#value__price span').text();
+			// var idValPrice = Number(idValPrice);
+			// var idValPrice = idValPrice - endPrice;
+			// $('#value__price span').text(idValPrice);
+			// // console.log(endPrice);
+
+			// var zalupa = 0;
+			// var Dzalupa = 0;
+
+			// $('.value__table[data-id="' + elem + '"]:visible').find('.value__price span').each(function(){
+			// 	var zalupa = +$(this).text();
+			// 	// var zalupa = Number(zalupa);
+			// 	Dzalupa += zalupa;
+			// 	console.log(Dzalupa);
+
+			// 	// zalupa += huhu;
+			// })
+
+			
+		}
+
+		// var zalupa = 0;
+
+		// $('.value__price span').each(function(){
+		// 	var huhu = $(this).text();
+		// 	var huhu = Number(huhu);
+		// 	console.log(huhu);
+
+		// 	zalupa += huhu;
+		// })
+
+		// $('#value__price span').text(zalupa);
+
+	})
 
 		var endPrice = $('.value__table[data-id="' + elem + '"]').find('.value__price span').text();
 		endPrice = Number(endPrice);
@@ -446,13 +723,23 @@ var calculator = function(){
 		idValPrice -= endPrice;
 		$('#value__price span').text(idValPrice);
 
-		if ($('.value__table').is(":hidden")) {
+		if ($('.value__table:visible').length < 2) {
 			$('.value__block-wrap--hidden').fadeOut();
 			$('.recall-fon').fadeIn();
 			$('.calculate__discount-wrap').animate({
 				opacity: 0
 			}, 300)
 		}
+
+		var i = 0;
+		$('.calculate__active-btn').each(function(){
+
+		i++;
+		$(this).find('.calculate__counter').text(i);
+		// console.log(i);
+		var counterRemDiscount = $(this).find('.calculate__counter').text();
+			counterRemDiscount = Number(counterRemDiscount);
+		})
 	});
 
 
