@@ -74,17 +74,17 @@ $('.method__images').slick({
 			settings: "unslick"
 		},
 		{
-			breakpoint: 769,
+			breakpoint: 481,
 			settings: {
-				slidesToShow     : 2,
+				slidesToShow     : 1,
 				slidesToScroll   : 1,
 				arrows           : true
 			}
 		},
 		{
-			breakpoint: 480,
+			breakpoint: 769,
 			settings: {
-				slidesToShow     : 1,
+				slidesToShow     : 2,
 				slidesToScroll   : 1,
 				arrows           : true
 			}
@@ -101,7 +101,7 @@ $('.about').slick({
 			settings: "unslick"
 		},
 		{
-			breakpoint: 480,
+			breakpoint: 481,
 			settings: {
 				slidesToShow     : 1,
 				slidesToScroll   : 1,
@@ -301,9 +301,32 @@ var calculator = function(){
 		$('.other').attr('data-price', other).attr('data-ch-price', ch_other);
 	}
 
-	$('.act').on('click', function(e){
+	$('.calculate__item').on('click', function(e){
 
-		$(this).removeClass('act');
+		// var i = 1;
+		// $('.calculate__active-btn').each(function(){
+		//
+		// 	var elem = $(this).data('id');
+		// 	// $(this).removeClass('act');
+		//
+		// 	i++;
+		// 	$(this).find('.calculate__counter').text(i);
+		// 	// console.log(i);
+		// 	var counterRemDiscount = $(this).find('.calculate__counter').text();
+		//
+		// 		counterRemDiscount = Number(counterRemDiscount);
+		// 		console.log(counterRemDiscount);
+		// 		if (counterRemDiscount % 2 == 0){
+		//
+
+		// 			$('.value__table[data-id="' + elem + '"]').find('.value__price-old span').text(globPriceUS); // по дефолту записываем цену США
+		// 		}else {
+		// 			$('.value__table[data-id="' + elem + '"]').find('.value__price-old span').empty(); // по дефолту записываем цену США
+		// 		}
+		// })
+		var globPriceUS = $(this).data('price');
+		var globPriceCH = $(this).data('ch-price');
+			$('.value__table[data-id="' + elem + '"]').find('.value__price-old span').text(globPriceUS); // по дефолту записываем цену США
 
 		if ($(this).hasClass('calculate__active-btn')) {
 			// $(this).removeClass('calculate__active-btn');
@@ -337,6 +360,8 @@ var calculator = function(){
 
 					// $('.value__table[data-id="' + elem + '"]').fadeIn();
 					$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq); // по дефолту записываем цену США
+
+					console.log(globPriceUS);
 				}else {
 					var qqq = $(this).data('price'); // США
 					qqq = Number(qqq);
@@ -347,7 +372,7 @@ var calculator = function(){
 					$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-ch').attr('data-ch-price', yyy); // записываем цену в атрибут для кнопки Китай
 
 					// $('.value__table[data-id="' + elem + '"]').fadeIn();
-					$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq); 
+					$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq);
 				}
 			})
 
@@ -411,6 +436,7 @@ var calculator = function(){
 			var idValPrice = Number(idValPrice);
 			var idValPrice = idValPrice + endPrice;
 			$('#value__price span').text(idValPrice);
+
 			}else{
 				var qqq = $(this).data('price');
 				var qqq = Number(qqq);
@@ -431,6 +457,7 @@ var calculator = function(){
 				var idValPrice = Number(idValPrice);
 				var idValPrice = idValPrice + endPrice;
 				$('#value__price span').text(idValPrice);
+				$('.value__table[data-id="' + elem + '"]').find('.value__price-old').css('display', 'none');
 				}
 			// if ($(this).hasClass('act')) {
 			// }
@@ -482,7 +509,7 @@ var calculator = function(){
 			// 	// zalupa += huhu;
 			// })
 
-			
+
 		}
 
 		// var zalupa = 0;
@@ -496,6 +523,10 @@ var calculator = function(){
 		// })
 
 		// $('#value__price span').text(zalupa);
+
+		var globPriceUS = $(this).data('price');
+		var globPriceCH = $(this).data('ch-price');
+			$('.value__table[data-id="' + elem + '"]').find('.value__price-old span').text(globPriceUS); // по дефолту записываем цену США
 
 	})
 
@@ -563,7 +594,7 @@ var calculator = function(){
 					$('.value__table[data-id="' + elem + '"]').find('.value__item-wrap-ch').attr('data-ch-price', yyy); // записываем цену в атрибут для кнопки Китай
 
 					// $('.value__table[data-id="' + elem + '"]').fadeIn();
-					$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq); 
+					$('.value__table[data-id="' + elem + '"]').find('.value__price span').text(qqq);
 				}
 			})
 
@@ -698,7 +729,7 @@ var calculator = function(){
 			// 	// zalupa += huhu;
 			// })
 
-			
+
 		}
 
 		// var zalupa = 0;

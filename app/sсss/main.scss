@@ -808,6 +808,26 @@ a.top-full__contact-text{
 		}
 	}
 
+	&__price-old{
+		position: relative;
+		margin-right: 15px;
+		span{
+			color: #a63333;
+			font-size: 20px;
+			font-family: $hncb;
+
+			&:after{
+				content: "";
+				height: 2px;
+				width: 100%;
+				position: absolute;
+				top: 10px;
+				left: 0;
+				background: #a63333;
+			}
+		}
+	}
+
 	&__desc-block{
 		width: 300px;
 		position: relative;

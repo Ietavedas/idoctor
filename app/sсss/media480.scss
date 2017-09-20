@@ -129,7 +129,7 @@ h1{
 .js-wrap{
 	height: auto;
 	width: 100%;
-	
+
 }
 
 .top-full{
@@ -149,12 +149,17 @@ h1{
 	}
 
 	.top-full__right{
-		display: none;	
+		display: none;
 	}
 }
 
 .value{
 	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.value__block-wrap:last-child{
+	margin-bottom: 50px;
 }
 
 .value__num-title{
@@ -286,6 +291,15 @@ h1{
 	span{
 		font-size: 11px;
 	}
+}
+
+.value__content-block #culcForm{
+	// flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.value__content-block #culcForm .recall__phone-wrap{
+	margin-bottom: 50px;
 }
 
 .recall-fon{
