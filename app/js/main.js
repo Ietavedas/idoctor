@@ -336,9 +336,20 @@ var calculator = function(){
 					// создаем внутренние элементы таблицы
 					createObject.prepend('<div class="value__table" data-id="' + dataID + '"><div class="value__close"></div><div class="value__table-row"><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__ebala-detail ' + imgClass + '"><span>' + dataName + '</span></div></div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__item-wrap active-btn"><span>США</span></div></div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__price-old"><span></span></div><div class="value__price"><span>' + usPrice + '</span></div></div></div></div></div></div>');
 
+					var count = [];
+
+					count = createObject.find('.value__table');
+
+					for (var i = 0; i < count.length; i += 2) {
+			      count[i].style.background = "red";
+			    }
+
+
+					console.log(count);
+
 			}
 
-			$('.create-object').find('.value__table').filter(":odd").find('.value__price').css('color', 'red');
+			// $('.create-object').find('.value__table').filter(":odd").find('.value__price').css('color', 'red');
 
 	});
 
