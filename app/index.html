@@ -56,9 +56,9 @@
 			<div class="top-full__wrapper top-full__wrapper--high">
 
 				<div class="top-full__left">
-					<div class="top-full__left-text">
+					<!-- <div class="top-full__left-text">
 						Сервисный центр
-					</div>
+					</div> -->
 				</div>
 
 				<div class="top-full__mid top-full__mid--center">
@@ -778,12 +778,12 @@
 									<div class="calculate__text"><span>Разбито стекло</span></div>
 									<div class="calculate__counter"></div>
 								</div>
-								<div class="calculate__item act cracked-screen" data-class="cracked-screen" data-name="Разбит дисплей" data-id="2" data-price="2000">
+								<div class="calculate__item act cracked-screen" data-class="cracked-screen" data-name="Разбит дисплей" data-id="2" data-price="2000" data-ch-price="0">
 									<div class="calculate__img"><img src="images/display.png" alt=""></div>
 									<div class="calculate__text"><span>Разбит дисплей</span></div>
 									<div class="calculate__counter"></div>
 								</div>
-								<div class="calculate__item act battery" data-class="battery" data-name="Проблемы с батареей" data-id="3" data-price="2500">
+								<div class="calculate__item act battery" data-class="battery" data-name="Проблемы с батареей" data-id="3" data-price="2500" data-ch-price="">
 									<div class="calculate__img"><img src="images/calc9.png" alt=""></div>
 									<div class="calculate__text"><span>Проблемы с батареей</span></div>
 									<div class="calculate__counter"></div>
@@ -815,7 +815,7 @@
 								</div>
 								<div class="calculate__item act microphone" data-class="microphone" data-name="Микрофон/Динамик" data-id="9" data-price="4000">
 									<div class="calculate__img"><img src="images/calc3.png" alt=""></div>
-									<div class="calculate__text"><span>Микрофон/Динамик</span></div>
+									<div class="calculate__text"><span>Микрофон/ Динамик</span></div>
 									<div class="calculate__counter"></div>
 								</div>
 								<div class="calculate__item act housing" data-class="housing" data-name="Корпус" data-id="10" data-price="3000">
@@ -963,7 +963,7 @@
 					</div> -->
 					<div class="value__table-title">
 						<div class="value__title">Деталь:</div>
-						<div class="value__title">Страна производителя:</div>
+						<div class="value__title">Качество запчасти:</div>
 						<div class="value__title">Цена:</div>
 					</div>
 
@@ -1032,7 +1032,7 @@
 
 		<form id="mainForm" action="">
 			<div class="recall__phone-wrap">
-				<input type="text" class="recall__phone" id="mainPhone" name="phone">
+				<input type="text" class="recall__phone" id="mainPhone" name="phone" placeholder="+7(   )-   -  -  ">
 			</div>
 
 			<button type="submit" class="btn">Отправить</button>
@@ -1573,7 +1573,7 @@
 
 		<form id="mainForm" action="">
 			<div class="recall__phone-wrap">
-				<input type="text" class="recall__phone" id="mainPhonePopup" name="phone">
+				<input type="text" class="recall__phone" id="mainPhonePopup" name="phone" placeholder="+7(   )-   -  -  ">
 			</div>
 
 			<button type="submit" class="btn">Отправить</button>
@@ -1585,6 +1585,7 @@
 
 
 <script src="js/libs.min.js"></script>
+<script src="js/mask.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -26,10 +26,10 @@ gulp.task('scripts', function(){
 			'app/libs/jquery/dist/jquery.min.js',
 			'app/libs/slick/slick.min.js',
 			'app/libs/jquery-validation/dist/jquery.validate.js',
-			"app/libs/Inputmask/dist/jquery.inputmask.bundle.js",
-			"app/libs/Inputmask/dist/inputmask/phone-codes/phone.js",
-			"app/libs/Inputmask/dist/inputmask/phone-codes/phone-be.js",
-			"app/libs/Inputmask/dist/inputmask/phone-codes/phone-ru.js",
+			// "app/libs/Inputmask/dist/jquery.inputmask.bundle.js",
+			// "app/libs/Inputmask/dist/inputmask/phone-codes/phone.js",
+			// "app/libs/Inputmask/dist/inputmask/phone-codes/phone-be.js",
+			// "app/libs/Inputmask/dist/inputmask/phone-codes/phone-ru.js",
 			"app/libs/fancybox/jquery.fancybox.min.js"
 		])
 	.pipe(concat('libs.min.js'))

@@ -135,9 +135,13 @@ function buttonsWidth(){
 }
 
 
-$('#mainPhone').inputmask({ mask: "+7[(999)-999-99-99]", greedy: false});
-$('#mainPhonePopup').inputmask("+7 (999) 999-99-99");
-$('#culcPhone').inputmask({ mask: "+7[(999)-999-99-99]", greedy: false});
+// $('#mainPhone').inputmask({ mask: "+7[(999)-999-99-99]", greedy: false});
+// $('#mainPhonePopup').inputmask("+7 (999) 999-99-99");
+// $('#culcPhone').inputmask({ mask: "+7[(999)-999-99-99]", greedy: false});
+
+$("#mainPhonePopup").mask("+7(999)-999-99-99",{placeholder:" "});
+$("#mainPhone").mask("+7(999)-999-99-99",{placeholder:" "});
+$("#culcPhone").mask("+7(999)-999-99-99",{placeholder:" "});
 
 
 $('.main-contact__qewstion-top').click(function(){
@@ -196,6 +200,8 @@ var calculator = function(){
 		$('.calculate__left--phone').css(
 			"display", "flex"
 		).siblings().not('.calculate__right').css('display', 'none');
+
+		$('#value__price span').text(0);
 	});
 	ipad.click(function(){
 		ipadModel.addClass('model').siblings().removeClass('model');
@@ -210,6 +216,7 @@ var calculator = function(){
 			"display", "flex"
 		).siblings().not('.calculate__right').css('display', 'none');
 
+		$('#value__price span').text(0);
 	});
 	samsung.click(function(){
 		samsungModel.addClass('model').siblings().removeClass('model');
@@ -223,6 +230,8 @@ var calculator = function(){
 		$('.calculate__left--samsung').css(
 			"display", "flex"
 		).siblings().not('.calculate__right').css('display', 'none');
+
+		$('#value__price span').text(0);
 	});
 
 
@@ -235,6 +244,8 @@ var calculator = function(){
 		$('.calculate__item').removeClass('calculate__active-btn');
 
 		getDatePrice();
+
+		$('#value__price span').text(0);
 	});
 	ipadModel.find('.value__item-wrap').click(function(){
 
@@ -245,6 +256,8 @@ var calculator = function(){
 		$('.calculate__item').removeClass('calculate__active-btn');
 
 		getDatePrice();
+
+		$('#value__price span').text(0);
 	});
 	samsungModel.find('.value__item-wrap').click(function(){
 
@@ -255,6 +268,10 @@ var calculator = function(){
 		$('.calculate__item').removeClass('calculate__active-btn');
 
 		getDatePrice();
+
+		$('.create-object .value__table').remove();
+
+		$('#value__price span').text(0);
 	});
 
 
@@ -301,60 +318,217 @@ var calculator = function(){
 		$('.other').attr('data-price', other).attr('data-ch-price', ch_other);
 	}
 
+	var datacount = 0;
+	var ii = 0;
+	var summCo = 0;
+	var summ = $('#value__price span').text();
+
 	$('.calculate__item').on('click', function () {
 
-			dataID = $(this).data('id');
-			var dataName = $(this).data('name'),
-					imgClass = $(this).data('class'),
-					usPrice = $(this).data('price'),
-					chPrice = $(this).data('ch-price');
+		dataID = $(this).data('id');
+		var dataName = $(this).data('name'),
+			imgClass = $(this).data('class'),
+			usPrice = $(this).data('price'),
+			chPrice = $(this).data('ch-price');
 
-			usPrice = Number(usPrice);
-			chPrice = Number(chPrice);
+			// console.log(chPrice);
 
-			var obj1 = (qqq * 30) / 100;
-			var qqq = qqq - obj1; // посчитали цену США
+		if ($(this).hasClass('calculate__active-btn')) {
 
-			var obj2 = (yyy * 30) / 100;
-			var yyy = yyy - obj2; // посчитали цену Китай
+			var x =$(this).data('datacount');
 
+			$(this).removeClass('calculate__active-btn');
 
+			// $('.value__table').each(function( index, element){})
+			// ii++;
+			// var dataN = $(this).data('datacount', datacount);
+			// Number(dataN);
+				
+			// if ( datacount > x ) {
+			// 	console.log("datacount :" + datacount);
+			// 	console.log("x : " + x);
 
-			if ($(this).hasClass('calculate__active-btn')) {
+			// 	datacount = datacount - 1;
+				
+			// 	console.log("datacount после :" + datacount);
 
-					$(this).removeClass('calculate__active-btn');
+			// 	$(this).attr('data-datacount', datacount);
+			// 	console.log(datacount);
 
-					$('.value__table[data-id="' + dataID + '"]').remove();
+			// 	$('.calculate__item[data-id="' + dataID + '"]').attr('data-datacount', datacount);
+			// }
+
+			var createObject = $('.create-object');
+
+			var count = [];
+
+			// count = createObject.find('.value__table').filter(':odd').addClass('D');
+			count = createObject.find('.value__table[data-id="' + dataID + '"] span');
+
+			if (count.hasClass('D')) {
+
+				count.each(function(index, element){
+
+					// console.log($(this));
+					// console.log(count);
+
+					$(element).find('.value__price-old span').text("");
+					// console.log("222");
+
+					usPrice = Number(usPrice);
+					chPrice = Number(chPrice);
+
+					// console.log($(element));
+					// var obj1 = (usPrice * 100) / 70;
+					// var qqq = usPrice - obj1; // посчитали цену США
+
+					// var obj2 = (yyy * 100) / 70;
+					// var yyy = yyy - obj2; // посчитали цену Китай
+
+					$(element).find('.value__price .D').text(usPrice);
+					$(element).find('.value__price span').removeClass('D');
+
+					var end = $(element).find('.value__price span').text();
+					summCo = summCo - +end;
+					$('#value__price span').text(summCo);
+				
+				})
 
 			}else{
 
-					$(this).addClass('calculate__active-btn');
+				count.each(function(index, element){
 
-					//обложка таблицы
-					var createObject = $('.create-object');
+					console.log("55");
 
-					// создаем внутренние элементы таблицы
-					createObject.prepend('<div class="value__table" data-id="' + dataID + '"><div class="value__close"></div><div class="value__table-row"><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__ebala-detail ' + imgClass + '"><span>' + dataName + '</span></div></div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__item-wrap active-btn"><span>США</span></div></div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__price-old"><span></span></div><div class="value__price"><span>' + usPrice + '</span></div></div></div></div></div></div>');
+					$(element).find('.value__price-old span').text(usPrice);
+					// console.log(ii);
 
-					var count = [];
+					usPrice = Number(usPrice);
+					chPrice = Number(chPrice);
 
-					count = createObject.find('.value__table');
+					// console.log($(element));
+					var obj1 = (usPrice * 30) / 100;
+					var qqq = usPrice - obj1; // посчитали цену США
 
-					for (var i = 0; i < count.length; i += 2) {
-			      count[i].style.background = "red";
-			    }
+					var obj2 = (yyy * 30) / 100;
+					var yyy = yyy - obj2; // посчитали цену Китай
 
-
-					console.log(count);
-
+					$(element).find('.value__price span').text(qqq);
+					$(element).find('.value__price span').removeClass('D');
+				
+				})
 			}
 
-			// $('.create-object').find('.value__table').filter(":odd").find('.value__price').css('color', 'red');
+			var end = $('.value__table[data-id="' + dataID + '"]').find('.value__price span').text();
+			summCo = summCo - +end;
+			$('#value__price span').text(summCo);
+
+						// console.log(end);
+
+			$('.value__table[data-id="' + dataID + '"]').remove();
+			ii--;
+
+		}else{
+
+			$(this).addClass('calculate__active-btn');
+
+			datacount++;
+
+			$(this).attr('data-datacount', datacount);
+
+			//обложка таблицы
+			var createObject = $('.create-object');
+
+			// создаем внутренние элементы таблицы
+			createObject.prepend('<div class="value__table" data-datacount="' + datacount + '" data-id="' + dataID + '"><div class="value__close"></div><div class="value__table-row"><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__ebala-detail ' + imgClass + '"><span>' + dataName + '</span></div></div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__item-wrap active-btn" data-price="' + usPrice + '"><span>США</span></div><div class="value__item-wrap" data-ch-price="' + chPrice + '"><span>Китай</span></div></div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__price-old"><span></span></div><div class="value__price"><span></span></div></div></div></div></div></div>');
+
+			var count = [];
+
+			// count = createObject.find('.value__table').filter(':odd').addClass('D');
+			count = createObject.find('.value__table[data-id="' + dataID + '"]');
+
+			count.each(function(index, element){
+
+				ii++;
+
+				if (ii % 2 === 0) {
+					$(element).find('.value__price-old span').text(usPrice);
+
+					usPrice = Number(usPrice);
+					chPrice = Number(chPrice);
+
+					// console.log($(element));
+					var obj1 = (usPrice * 30) / 100;
+					var qqq = usPrice - obj1; // посчитали цену США
+
+					var obj2 = (yyy * 30) / 100;
+					var yyy = yyy - obj2; // посчитали цену Китай
+
+					$(element).find('.value__price span').text(qqq);
+					$(element).find('.value__price span').addClass('D');
+
+					var end = $(element).find('.value__price span').text();
+					summCo = summCo + +end;
+					$('#value__price span').text(summCo);
+
+				}else{
+					$(element).find('.value__price-old span').text("");
+					$(element).find('.value__price span').text(usPrice);
+
+					var end = $(element).find('.value__price span').text();
+					summCo = summCo + +end;
+					$('#value__price span').text(summCo);
+				}
+			})	
+		}
+
+		if ($('.calculate__active-btn').length > 0) {
+			$('.value__block-wrap--hidden').fadeIn();
+		}else{
+			$('.value__block-wrap--hidden').fadeOut();
+		}
+
+		// $('.value__item-wrap').each(function(){
+		// 	if ($('.value__item-wrap').data('price') == "0") {
+		// 		$(this).css('display', 'none');
+		// 	}
+
+		// 	if ($('.value__item-wrap').data('ch-price') == "0") {
+		// 		$(this).css('display', 'none');
+		// 	}
+		// console.log($('.value__item-wrap').data('price'));
+		// })
+
+		if ($(this).data('price') == 0) {
+			console.log(777);
+			$('.create-object').find('.value__table[data-id="' + dataID + '"]').find('.value__item-wrap[data-price="' + usPrice + '"]').css('display', 'none');
+		}
+			console.log($(this).data('ch-price'));
+
+		if ($(this).data('ch-price') == 0) {
+			console.log($('.create-object').find('.value__table[data-id="' + dataID + '"]').find('.value__item-wrap[data-price="' + chPrice + '"]'));
+			$('.create-object').find('.value__table[data-id="' + dataID + '"]').find('.value__item-wrap[data-price="' + chPrice + '"]').css('display', 'none');
+		}else{
+			$('.create-object').find('.value__table[data-id="' + dataID + '"]').find('.value__item-wrap[data-price="' + chPrice + '"]').css('display', 'none');
+		}
+		
 
 	});
 
 	$('html').on('click', '.value__close', function () {
-			$(this).parent('.value__table').remove();
+
+		dataID = $(this).parent().data('id');
+
+		var end = $('.value__table[data-id="' + dataID + '"]').find('.value__price span').text();
+			summCo = summCo - +end;
+			$('#value__price span').text(summCo);
+
+		$(this).parent('.value__table[data-id="' + dataID + '"]').remove();
+		$('.calculate__item[data-id="' + dataID + '"]').removeClass('calculate__active-btn');
+
+		if ($('.calculate__active-btn').length < 1) {
+			$('.value__block-wrap--hidden').fadeOut();
+		}
 	})
 
 }
