@@ -181,25 +181,29 @@ $('#toRecallRemont').fancybox();
 
 
 var calculator = function(){
-	var iphone = $('.js-iphone'),
-		ipad = $('.js-ipad'),
-		samsung = $('.js-samsung'),
+	var iphone = $('.js-iphone, #iPhone'),
+		ipad = $('.js-ipad, #iPad'),
+		samsung = $('.js-samsung, #Samsung'),
 		iphoneModel = $('.js-iphoneModel'),
 		ipadModel = $('.js-ipadModel'),
 		samsungModel = $('.js-samsungModel');
-
+//это можно оптимизировать
 	iphone.click(function(){
 		iphoneModel.addClass('model').siblings().removeClass('model');
 		$('.calculate__iphone').addClass('active-img').siblings().removeClass('active-img');
 		buttonsWidth();
 
-		$(this).addClass('active-btn').siblings().removeClass('active-btn');
+		$('.js-iphone').addClass('active-btn').siblings().removeClass('active-btn');
 
 		$('.calculate__item').removeClass('calculate__active-btn');
 
 		$('.calculate__left--phone').css(
 			"display", "flex"
 		).siblings().not('.calculate__right').css('display', 'none');
+
+		$('.create-object').find('.value__table').remove();
+		$('.value__block-wrap--hidden').fadeOut();
+		summCo = 0;
 
 		$('#value__price span').text(0);
 	});
@@ -208,13 +212,17 @@ var calculator = function(){
 		$('.calculate__ipad').addClass('active-img').siblings().removeClass('active-img');
 		buttonsWidth();
 
-		$(this).addClass('active-btn').siblings().removeClass('active-btn');
+		$('.js-ipad').addClass('active-btn').siblings().removeClass('active-btn');
 
 		$('.calculate__item').removeClass('calculate__active-btn');
 
 		$('.calculate__left--ipad').css(
 			"display", "flex"
 		).siblings().not('.calculate__right').css('display', 'none');
+
+		$('.create-object').find('.value__table').remove();
+		$('.value__block-wrap--hidden').fadeOut();
+		summCo = 0;
 
 		$('#value__price span').text(0);
 	});
@@ -223,7 +231,7 @@ var calculator = function(){
 		$('.calculate__andriod').addClass('active-img').siblings().removeClass('active-img');
 		buttonsWidth();
 
-		$(this).addClass('active-btn').siblings().removeClass('active-btn');
+		$('.js-samsung').addClass('active-btn').siblings().removeClass('active-btn');
 
 		$('.calculate__item').removeClass('calculate__active-btn');
 
@@ -231,10 +239,14 @@ var calculator = function(){
 			"display", "flex"
 		).siblings().not('.calculate__right').css('display', 'none');
 
+		$('.create-object').find('.value__table').remove();
+		$('.value__block-wrap--hidden').fadeOut();
+		summCo = 0;
+
 		$('#value__price span').text(0);
 	});
 
-
+//это можно оптимизировать
 	iphoneModel.find('.value__item-wrap').click(function(){
 
 		_this = $(this);
@@ -244,6 +256,10 @@ var calculator = function(){
 		$('.calculate__item').removeClass('calculate__active-btn');
 
 		getDatePrice();
+
+		$('.create-object').find('.value__table').remove();
+		$('.value__block-wrap--hidden').fadeOut();
+		summCo = 0;
 
 		$('#value__price span').text(0);
 	});
@@ -257,6 +273,10 @@ var calculator = function(){
 
 		getDatePrice();
 
+		$('.create-object').find('.value__table').remove();
+		$('.value__block-wrap--hidden').fadeOut();
+		summCo = 0;
+
 		$('#value__price span').text(0);
 	});
 	samsungModel.find('.value__item-wrap').click(function(){
@@ -269,12 +289,14 @@ var calculator = function(){
 
 		getDatePrice();
 
-		$('.create-object .value__table').remove();
+		$('.create-object').find('.value__table').remove();
+		$('.value__block-wrap--hidden').fadeOut();
+		summCo = 0;
 
 		$('#value__price span').text(0);
 	});
 
-
+//это можно оптимизировать
 	function getDatePrice(){
 
 		crackedScreen = _this.data("cracked-screen"),
@@ -303,7 +325,7 @@ var calculator = function(){
 
 		return putDatePrice();
 	}
-
+//это можно оптимизировать
 	function putDatePrice(){
 		$('.cracked-screen').attr('data-price', crackedScreen).attr('data-ch-price', ch_crackedScreen);
 		$('.housing').attr('data-price', housing).attr('data-ch-price', ch_housing);
@@ -323,7 +345,17 @@ var calculator = function(){
 	var summCo = 0;
 	var summ = $('#value__price span').text();
 
-	$('.calculate__item').on('click', function () {
+// клик на кнопку калькулятора, вся магия здесь
+	$('.calculate__item').on('click', function (event) {
+		// event.preventDefault();
+		// var elementClick = $(this).attr("href");
+
+        // if ($.browser.safari) {
+        //     $('body').animate({ scrollTop: destination }, 1100); //1100 - скорость
+        // } else {
+        //     $('html').animate({ scrollTop: destination }, 1100);
+        // }
+				// console.log(destination);
 
 		dataID = $(this).data('id');
 		var dataName = $(this).data('name'),
@@ -343,13 +375,13 @@ var calculator = function(){
 			// ii++;
 			// var dataN = $(this).data('datacount', datacount);
 			// Number(dataN);
-				
+
 			// if ( datacount > x ) {
 			// 	console.log("datacount :" + datacount);
 			// 	console.log("x : " + x);
 
 			// 	datacount = datacount - 1;
-				
+
 			// 	console.log("datacount после :" + datacount);
 
 			// 	$(this).attr('data-datacount', datacount);
@@ -391,7 +423,7 @@ var calculator = function(){
 					var end = $(element).find('.value__price span').text();
 					summCo = summCo - +end;
 					$('#value__price span').text(summCo);
-				
+
 				})
 
 			}else{
@@ -415,15 +447,13 @@ var calculator = function(){
 
 					$(element).find('.value__price span').text(qqq);
 					$(element).find('.value__price span').removeClass('D');
-				
+
 				})
 			}
 
 			var end = $('.value__table[data-id="' + dataID + '"]').find('.value__price span').text();
 			summCo = summCo - +end;
 			$('#value__price span').text(summCo);
-
-						// console.log(end);
 
 			$('.value__table[data-id="' + dataID + '"]').remove();
 			ii--;
@@ -439,8 +469,25 @@ var calculator = function(){
 			//обложка таблицы
 			var createObject = $('.create-object');
 
+			//вычисляем производителя
+			var hasPrice;
+
+			if (usPrice == usPrice && chPrice == undefined) {
+				console.log(12);
+				hasPrice = '<div class="value__item-wrap value__item-wrap-us active-btn" data-price="' + usPrice + '"><span>США</span></div>';
+			}else if (chPrice == chPrice && usPrice == undefined) {
+				console.log(14);
+				hasPrice = '<div class="value__item-wrap value__item-wrap-ch active-btn" data-ch-price="' + chPrice + '"><span>Китай</span></div>';
+			}else if (usPrice == usPrice && chPrice == chPrice) {
+				console.log(16);
+				hasPrice = '<div class="value__item-wrap value__item-wrap-us active-btn" data-price="' + usPrice + '"><span>США</span></div><div class="value__item-wrap value__item-wrap-ch" data-ch-price="' + chPrice + '"><span>Китай</span></div>';
+			}else if (usPrice == undefined && chPrice == undefined) {
+				console.log(17);
+				hasPrice = '';
+			}
+
 			// создаем внутренние элементы таблицы
-			createObject.prepend('<div class="value__table" data-datacount="' + datacount + '" data-id="' + dataID + '"><div class="value__close"></div><div class="value__table-row"><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__ebala-detail ' + imgClass + '"><span>' + dataName + '</span></div></div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__item-wrap active-btn" data-price="' + usPrice + '"><span>США</span></div><div class="value__item-wrap" data-ch-price="' + chPrice + '"><span>Китай</span></div></div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__price-old"><span></span></div><div class="value__price"><span></span></div></div></div></div></div></div>');
+			createObject.append('<div id="' + datacount + '" class="value__table" data-datacount="' + datacount + '" data-id="' + dataID + '"><div class="value__close"></div><div class="value__table-row"><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__ebala-detail ' + imgClass + '"><span>' + dataName + '</span></div></div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"> ' + hasPrice + ' </div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__price-old"><span></span></div><div class="value__price"><span></span></div></div></div></div></div></div>');
 
 			var count = [];
 
@@ -479,39 +526,28 @@ var calculator = function(){
 					summCo = summCo + +end;
 					$('#value__price span').text(summCo);
 				}
-			})	
+
+				// if ($('.calculate__active-btn').length > 1) {
+				// 	var destination = $('#hz').offset().top - 500;
+				// 	$('html, body').animate({ scrollTop: destination }, 1100);
+				// }else {
+				// 	var destination = $('.value').offset().top + 1100;
+				// 	$('html, body').animate({ scrollTop: destination }, 1100);
+				// }
+			})
 		}
 
 		if ($('.calculate__active-btn').length > 0) {
 			$('.value__block-wrap--hidden').fadeIn();
+			$('.calculate__discount-wrap').animate({
+				opacity: 1
+			})
 		}else{
 			$('.value__block-wrap--hidden').fadeOut();
+			$('.calculate__discount-wrap').animate({
+				opacity: 0
+			})
 		}
-
-		// $('.value__item-wrap').each(function(){
-		// 	if ($('.value__item-wrap').data('price') == "0") {
-		// 		$(this).css('display', 'none');
-		// 	}
-
-		// 	if ($('.value__item-wrap').data('ch-price') == "0") {
-		// 		$(this).css('display', 'none');
-		// 	}
-		// console.log($('.value__item-wrap').data('price'));
-		// })
-
-		if ($(this).data('price') == 0) {
-			console.log(777);
-			$('.create-object').find('.value__table[data-id="' + dataID + '"]').find('.value__item-wrap[data-price="' + usPrice + '"]').css('display', 'none');
-		}
-			console.log($(this).data('ch-price'));
-
-		if ($(this).data('ch-price') == 0) {
-			console.log($('.create-object').find('.value__table[data-id="' + dataID + '"]').find('.value__item-wrap[data-price="' + chPrice + '"]'));
-			$('.create-object').find('.value__table[data-id="' + dataID + '"]').find('.value__item-wrap[data-price="' + chPrice + '"]').css('display', 'none');
-		}else{
-			$('.create-object').find('.value__table[data-id="' + dataID + '"]').find('.value__item-wrap[data-price="' + chPrice + '"]').css('display', 'none');
-		}
-		
 
 	});
 
@@ -528,7 +564,126 @@ var calculator = function(){
 
 		if ($('.calculate__active-btn').length < 1) {
 			$('.value__block-wrap--hidden').fadeOut();
+			$('.calculate__discount-wrap').animate({
+				opacity: 0
+			})
 		}
+	})
+
+	$('html').on('click', '.value__item-wrap-us', function () {
+		if ($(this).hasClass('active-btn')) {
+			return false;
+		}else {
+			$(this).addClass('active-btn').siblings().removeClass('active-btn');
+
+			var prodPrice = $(this).parents('.value__table').find('.value__price span');
+			var putPrice = $(this).data('price');
+			var getPrice = $(this).parent().find('.value__item-wrap-ch').data('ch-price');
+			var summ = $('#value__price span').text();
+
+			putPrice = Number(putPrice);
+			getPrice = Number(getPrice);
+			summ = Number(summ);
+
+			if (prodPrice.hasClass('D')) {
+				var obj1 = (putPrice * 30) / 100;
+				var putPrice = putPrice - obj1; // посчитали цену США
+
+				var obj2 = (getPrice * 30) / 100;
+				var getPrice = getPrice - obj2; // посчитали цену Китай
+
+				prodPrice.text(putPrice);
+
+				var itog = summ - getPrice + putPrice;
+			}else {
+				prodPrice.text(putPrice);
+
+				var itog = summ - getPrice + putPrice;
+			}
+
+			$('#value__price span').text(itog);
+		}
+	})
+
+	$('html').on('click', '.value__item-wrap-ch', function () {
+		if ($(this).hasClass('active-btn')) {
+			return false;
+		}else {
+			$(this).addClass('active-btn').siblings().removeClass('active-btn');
+
+			var prodPrice = $(this).parents('.value__table').find('.value__price span');
+			var putPrice = $(this).data('ch-price');
+			var getPrice = $(this).parent().find('.value__item-wrap-us').data('price');
+			var summ = $('#value__price span').text();
+
+			putPrice = Number(putPrice);
+			getPrice = Number(getPrice);
+			summ = Number(summ);
+
+			if (prodPrice.hasClass('D')) {
+				var obj1 = (putPrice * 30) / 100;
+				var putPrice = putPrice - obj1; // посчитали цену Китай
+
+				var obj2 = (getPrice * 30) / 100;
+				var getPrice = getPrice - obj2; // посчитали цену США
+
+				prodPrice.text(putPrice);
+
+				var itog = summ - getPrice + putPrice;
+			}else {
+				prodPrice.text(putPrice);
+
+				var itog = summ - getPrice + putPrice;
+			}
+
+			console.log(itog);
+
+			$('#value__price span').text(itog);
+		}
+	})
+
+	$('#iPhone').on('click', function(event) {
+		event.preventDefault();
+		buttonsWidth();
+		var lll = $('.value').offset().top;
+		$('html, body').animate({
+			scrollTop: lll
+		})
+		$('.js-iphoneModel').addClass('model').siblings().removeClass('model');
+		$('.value__item-wrap').each(function(){
+			$(this).css('width', $(this).find('span').width() + 20);
+		})
+	})
+	$('#iPad').on('click', function(event) {
+		event.preventDefault();
+		buttonsWidth();
+		var lll = $('.value').offset().top;
+		$('html, body').animate({
+			scrollTop: lll
+		})
+		$('.js-ipadModel').addClass('model').siblings().removeClass('model');
+		$('.value__item-wrap').each(function(){
+			$(this).css('width', $(this).find('span').width() + 20);
+		})
+	})
+	$('#Samsung').on('click', function(event) {
+		event.preventDefault();
+
+		var lll = $('.value').offset().top;
+		$('html, body').animate({
+			scrollTop: lll
+		})
+		$('.js-samsungModel').addClass('model').siblings().removeClass('model');
+		$('.value__item-wrap').each(function(){
+			$(this).css('width', $(this).find('span').width() + 20);
+		})
+	})
+
+	$('.value__item-wrap').on('click', function() {
+		var zzzz = $(this).data('i');
+		console.log(zzzz)
+
+		$('.calcul_img[data-i="' + zzzz + '"]').addClass('active-img').siblings().removeClass('active-img');
 	})
 
 }

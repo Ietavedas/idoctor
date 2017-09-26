@@ -202,7 +202,8 @@ body{
 		color: #b1e9f5;
 		display: flex;
 		transform: rotate(-90deg);
-		align-items: flex-end;
+		// align-items: flex-end;
+		justify-content: center;
 		position: absolute;
     	right: -117px;
 
@@ -301,7 +302,7 @@ body{
 
 .social{
 	// margin-left: 10px;
-	margin-top: 20px;
+	// margin-top: 2px;
 
 	a{
 		margin-left: 15px;
@@ -309,6 +310,13 @@ body{
 			margin-left: 0;
 		}
 	}
+}
+
+.recall__phone{
+	&::-webkit-input-placeholder {color:#a6b6d9;}
+	&::-moz-placeholder          {color:#a6b6d9;}/* Firefox 19+ */
+	&:-moz-placeholder           {color:#a6b6d9;}/* Firefox 18- */
+	&:-ms-input-placeholder      {color:#a6b6d9;}
 }
 
 a.top-full__contact-text{
@@ -747,7 +755,6 @@ a.top-full__contact-text{
 		height: 36px;
 		text-align: center;
 
-
 		span{
 			font-size: 20px;
 			font-family: $hncl;
@@ -756,8 +763,7 @@ a.top-full__contact-text{
 			white-space: nowrap;
 			// top: 50%;
 			transform: translate(-50%);
-			margin-top: 5px;
-
+			margin-top: 7px;
 		}
 		&:after{
 			content: "";
@@ -925,6 +931,7 @@ a.top-full__contact-text{
 			height: auto;
 			max-height: 494px;
 			margin: 0 auto;
+			// display: none;
 		}
 	}
 
@@ -939,6 +946,7 @@ a.top-full__contact-text{
 		cursor: pointer;
 		margin-right: 30px;
 		margin-bottom: 30px;
+		text-decoration: none;
 		transition: .3s;
 
 		&:hover{
@@ -1016,6 +1024,7 @@ a.top-full__contact-text{
 		// width: 54px;
 		// height: 54px;
 		text-align: center;
+		color: #000;
 
 		span{
 			max-width: 80%;
@@ -1043,7 +1052,6 @@ a.top-full__contact-text{
 		&:hover{
 			border: 1px solid #fff;
 		}
-
 		.calculate__text{
 			width: 54px;
 			height: 54px;
@@ -1077,7 +1085,9 @@ a.top-full__contact-text{
 	}
 }
 
-
+.calcul_img{
+	display: none;
+}
 
 
 .method{
