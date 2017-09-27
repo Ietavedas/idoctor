@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/libs.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/media480.css">
+	<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
 </head>
 <body>
 
@@ -771,7 +772,7 @@
 					<div class="value__title">Выберите тип проблемы:</div>
 					<div class="value__content">
 
-						<div class="calculate calculate">
+						<div class="calculate">
 							<div class="calculate__left calculate__left--phone">
 								<div class="calculate__item act broken-glass" data-class="broken-glass" data-name="Разбито стекло" data-id="1"  data-price="6000" data-ch-price="5000">
 									<div class="calculate__img"><img src="images/steklo.png" alt=""></div>
@@ -1040,10 +1041,10 @@
 
 					<form id="culcForm" action="">
 						<div class="recall__phone-wrap">
-							<input type="text" class="recall__phone" id="culcPhone" name="phone" placeholder="+7(   )-   -  -  ">
+							<input type="text" class="recall__phone" id="culcPhone" name="phone" placeholder="+7 (   )   -  -  ">
 						</div>
 
-						<button type="submit" class="btn">Отправить</button>
+						<button type="submit" class="btn">Заказать ремонт</button>
 					</form>
 
 				</div>
@@ -1063,7 +1064,7 @@
 
 		<form id="mainForm" action="">
 			<div class="recall__phone-wrap">
-				<input type="text" class="recall__phone" id="mainPhone" name="phone" placeholder="+7(   )-   -  -  ">
+				<input type="text" class="recall__phone" id="mainPhone" name="phone" placeholder="+7 (   )   -  -  ">
 			</div>
 
 			<button type="submit" class="btn">Отправить</button>
@@ -1128,6 +1129,31 @@
 
 </div>
 
+
+<!-- <div class="slider-wrap">
+	<div class="slider">
+		<div class="slide">
+			<div class="slide__left">
+				<div class="slide__info">
+					<div class="slide__title">Наши специалисты</div>
+					<div class="slide__status">Старший специалист:</div>
+					<div class="slide__name">Вениамин Константинопольский</div>
+					<div class="slide__exp-val">4 года</div>
+					<div class="slide__exp">опыт работы</div>
+					<div class="slide__repare-device">Более 2 000</div>
+					<div class="slide__repare-device-count">восстановленых гаджетов</div>
+				</div>
+			</div>
+			<div class="slide__right">
+				<div class="slide__fon">
+					<img src="images/man1.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="slider-control"></div>
+</div> -->
 
 <div class="slider-wrap">
 	<div class="slider">
@@ -1386,8 +1412,8 @@
 </div>
 
 
-<div class="map">
-	<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4f4ff382c25a3d6b53c3f208faf6aa2a1a5e4a90258a6e7bf57fb187b79e5589&amp;width=100%25&amp;height=380&amp;lang=ru_RU&amp;scroll=true"></script>
+<div id="map" class="map">
+	<!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4f4ff382c25a3d6b53c3f208faf6aa2a1a5e4a90258a6e7bf57fb187b79e5589&amp;width=100%25&amp;height=380&amp;lang=ru_RU&amp;scroll=true"></script> -->
 </div>
 
 <footer class="footer">
@@ -1604,7 +1630,7 @@
 
 		<form id="mainForm" action="">
 			<div class="recall__phone-wrap">
-				<input type="text" class="recall__phone" id="mainPhonePopup" name="phone" placeholder="+7(   )-   -  -  ">
+				<input type="text" class="recall__phone" id="mainPhonePopup" name="phone" placeholder="+7 (   )    -  -  ">
 			</div>
 
 			<button type="submit" class="btn">Отправить</button>
@@ -1617,6 +1643,7 @@
 
 <script src="js/libs.min.js"></script>
 <script src="js/mask.js"></script>
+<script src="js/accounting.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

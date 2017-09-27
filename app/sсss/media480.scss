@@ -93,6 +93,7 @@
 
 .method__desc{
 	max-width: none;
+	margin-left: 20px;
 }
 
 h1{
@@ -122,8 +123,14 @@ h1{
 	display: none !important;
 }
 
+
+
 .top-full__bottom:before{
 	content: url(../images/i2.png);
+	position: absolute;
+	top: -70px;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .js-wrap{
@@ -135,6 +142,7 @@ h1{
 .top-full{
 	background-size: auto;
 	min-height: 500px;
+	margin-bottom: 285px;
 }
 
 .top-full__wrapper--mobile{
@@ -234,7 +242,7 @@ h1{
 	justify-content: center;
 	height: 100%;
 	align-items: center;
-	flex-direction: column;
+	// flex-direction: column;
 
 	.value__title{
 		display: block;
@@ -243,11 +251,16 @@ h1{
 }
 
 .value__ebala-detail:before{
-	transform: translateY(-10%);
+	// transform: translateY(-10%);
+}
+
+.value__block:after{
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .value__close{
-	top: -13px;
+	top: 0px !important;
 }
 
 .value__list{
@@ -258,6 +271,10 @@ h1{
 	left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
+}
+
+.calculate{
+	justify-content: center;
 }
 
 .calculate__right{
@@ -272,7 +289,8 @@ h1{
 .calculate__left{
 	// justify-content: space-between;
 	min-width: 0;
-	width: 100%;
+	width: 80%;
+	margin-left: -8px;
 	// margin: 0 auto;
 	// margin-left: -19px;
     padding-bottom: 120px;
@@ -353,7 +371,9 @@ h1{
 
 .top-full__bottom{
 	position: absolute;
-	bottom: -168px;
+	bottom: -265px;
+	padding-left: 0px;
+	text-align: center;
 
 	.top-full__desc{
 		color: #5c5c5c;
@@ -495,4 +515,10 @@ h1{
 	display: none;
 }
 
+}
+
+@media screen and (max-width: 400px){
+	.calculate__left{
+		width: 100%;
+	}
 }

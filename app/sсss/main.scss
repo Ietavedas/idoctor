@@ -208,7 +208,8 @@ body{
     	right: -117px;
 
 		.social{
-			margin-left: 10px;
+			margin-left: 20px;
+			margin-top: 1px;
 
 			a{
 				// margin-left: 10px;
@@ -268,7 +269,7 @@ body{
 			content: url(../images/i.png);
 			position: absolute;
 			left: 0;
-			margin-top: 5px;
+			margin-top: 4px;
 		}
 	}
 
@@ -379,6 +380,16 @@ a.top-full__contact-text{
 		display: flex;
 		justify-content: center;
 
+		&:nth-child(4){
+			background: #fff;
+			.value__block{
+				&:after{
+					content: "";
+					background: url(../images/arr-bg1.png);
+				}
+			}
+		}
+
 		&:last-child{
 			border: none;
 			margin-bottom: 125px;
@@ -386,6 +397,7 @@ a.top-full__contact-text{
 			.value__block{
 				&:after{
 					background: none;
+					// display: none;
 				}
 			}
 		}
@@ -403,11 +415,14 @@ a.top-full__contact-text{
 		&:after{
 			content: "";
 			background: url(../images/arr-bg.png);
+			// background: #fafafa;
 			width: 36px;
+			// height: 36px;
 			height: 16px;
 			position: absolute;
 			left: 9px;
 			bottom: -16px;
+			// transform: rotate(45deg);
 		}
 	}
 
@@ -678,8 +693,9 @@ a.top-full__contact-text{
 			.btn{
 				margin-top: 0;
 				margin-bottom: 0;
-				background: #fff;
-				color: #000;
+				// background: #fff;
+				background: linear-gradient(to left, #4e5d84 20%, #2989a5 80%);
+				color: #fff;
 
 				&:hover{
 					background: linear-gradient(to right, #4e5d84 20%, #2989a5 80%);
@@ -1044,7 +1060,7 @@ a.top-full__contact-text{
 		position: relative;
 		border: 1px solid #fff;
 		// display: none;
-		opacity: 0;
+		// opacity: 0;
 		cursor: auto;
 		width: 96px;
 		height: 96px;
@@ -1334,12 +1350,93 @@ a.top-full__contact-text{
 		width: 100%;
 		// height: 485px;
 		outline: 0;
+		font-size: 0;
 
 		img{
 			// height: 485px;
 			width: 100%;
 		}
 	}
+
+	// .slide__left{
+	// 	width: 50%;
+	// 	display: inline-block;
+	// 	vertical-align: middle;
+	// }
+	//
+	// .slide__right{
+	// 	width: 50%;
+	// 	display: inline-block;
+	// 	vertical-align: middle;
+	// }
+	// .slide__fon{
+	// 	background: url(../images/spec-fon.jpg) no-repeat;
+	// 	width: 100%;
+	// 	height: auto;
+	// 	// background-size: contain;
+	// 	background-size: cover;
+	// 	background-position: center;
+	// 	max-height: 850px;
+	//
+	// 	img{
+	// 		height: 80%;
+	// 		margin-left: 100px;
+	// 		margin-top: 50px;
+	// 	}
+	// }
+
+	// .slide__info{
+	// 	max-width: 400px;
+	// 	margin: 0 auto;
+	// }
+	//
+	// .slide__title{
+	// 	font-family: $hnct;
+	// 	font-size: 45px;
+	// 	color: #484848;
+	// 	margin-bottom: 12vh;
+	// }
+	//
+	// .slide__status{
+	// 	color: #b1b1b1;
+	// 	font-size: 20px;
+	// 	font-family: $hncl;
+	// 	margin-bottom: 1vh;
+	// }
+	//
+	// .slide__name{
+	// 	color: #000000;
+	// 	font-size: 35px;
+	// 	font-family: $hncb;
+	// 	margin-bottom: 5vh;
+	// }
+	//
+	// .slide__exp-val{
+	// 	color: #000000;
+	// 	font-size: 40px;
+	// 	font-family: $hnct;
+	// 	margin-bottom: 0.5vh;
+	// }
+	//
+	// .slide__exp{
+	// 	color: #b1b1b1;
+	// 	font-size: 20px;
+	// 	font-family: $hncr;
+	// 	margin-bottom: 4vh;
+	// }
+	//
+	// .slide__repare-device{
+	// 	color: #000000;
+	// 	font-size: 40px;
+	// 	font-family: $hnct;
+	// 	margin-bottom: 0.5vh;
+	// }
+	//
+	// .slide__repare-device-count{
+	// 	color: #b1b1b1;
+	// 	font-size: 20px;
+	// 	font-family: $hncr;
+	// }
 }
 
 .mobile-slider-wrap{
@@ -1367,6 +1464,7 @@ a.top-full__contact-text{
 	}
 
 	.slick-prev{
+		top: 32%;
 		left: 15px;
 		&:after{
 			content: "";
@@ -1381,6 +1479,7 @@ a.top-full__contact-text{
 	}
 
 	.slick-next{
+		top: 32%;
 		right: 15px;
 		&:after{
 			content: "";
@@ -1646,11 +1745,16 @@ a.top-full__contact-text{
 	&__contact-wrap{
 		margin-bottom: 40px;
 	}
+
+	.social{
+		margin-top: 12px;
+	}
 }
 
 
 .map{
 	height: 380px;
+	width: 100%;
 }
 
 

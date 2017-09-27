@@ -139,9 +139,9 @@ function buttonsWidth(){
 // $('#mainPhonePopup').inputmask("+7 (999) 999-99-99");
 // $('#culcPhone').inputmask({ mask: "+7[(999)-999-99-99]", greedy: false});
 
-$("#mainPhonePopup").mask("+7(999)-999-99-99",{placeholder:" "});
-$("#mainPhone").mask("+7(999)-999-99-99",{placeholder:" "});
-$("#culcPhone").mask("+7(999)-999-99-99",{placeholder:" "});
+$("#mainPhonePopup").mask("+7 (999) 999-99-99",{placeholder:" "});
+$("#mainPhone").mask("+7 (999) 999-99-99",{placeholder:" "});
+$("#culcPhone").mask("+7 (999) 999-99-99",{placeholder:" "});
 
 
 $('.main-contact__qewstion-top').click(function(){
@@ -162,6 +162,20 @@ $('.main-contact__qewstion-top').click(function(){
 	}
 
 })
+
+var myMap;
+
+ymaps.ready(mapInit);
+
+function mapInit() {
+		myMap = new ymaps.Map("map", {
+			center: [55.15908456955195,61.37599949999997],
+			zoom: 15
+		});
+		var myPlacemark = new ymaps.Placemark([55.15908456955195,61.37599949999997]);
+
+		myMap.geoObjects.add(myPlacemark);
+}
 
 $('#morphing').fancybox();
 $('#toRecall').fancybox();
@@ -422,6 +436,7 @@ var calculator = function(){
 
 					var end = $(element).find('.value__price span').text();
 					summCo = summCo - +end;
+					accounting.formatNumber(summCo, " ");
 					$('#value__price span').text(summCo);
 
 				})
@@ -444,8 +459,9 @@ var calculator = function(){
 
 					var obj2 = (yyy * 30) / 100;
 					var yyy = yyy - obj2; // посчитали цену Китай
+					var dd = accounting.formatNumber(qqq, " ");
 
-					$(element).find('.value__price span').text(qqq);
+					$(element).find('.value__price span').text(dd);
 					$(element).find('.value__price span').removeClass('D');
 
 				})
@@ -510,8 +526,9 @@ var calculator = function(){
 
 					var obj2 = (yyy * 30) / 100;
 					var yyy = yyy - obj2; // посчитали цену Китай
+					var dd = accounting.formatNumber(qqq, " ");
 
-					$(element).find('.value__price span').text(qqq);
+					$(element).find('.value__price span').text(dd);
 					$(element).find('.value__price span').addClass('D');
 
 					var end = $(element).find('.value__price span').text();
@@ -539,14 +556,14 @@ var calculator = function(){
 
 		if ($('.calculate__active-btn').length > 0) {
 			$('.value__block-wrap--hidden').fadeIn();
-			$('.calculate__discount-wrap').animate({
-				opacity: 1
-			})
+			// $('.calculate__discount-wrap').animate({
+			// 	opacity: 1
+			// })
 		}else{
 			$('.value__block-wrap--hidden').fadeOut();
-			$('.calculate__discount-wrap').animate({
-				opacity: 0
-			})
+			// $('.calculate__discount-wrap').animate({
+			// 	opacity: 0
+			// })
 		}
 
 	});
@@ -564,9 +581,9 @@ var calculator = function(){
 
 		if ($('.calculate__active-btn').length < 1) {
 			$('.value__block-wrap--hidden').fadeOut();
-			$('.calculate__discount-wrap').animate({
-				opacity: 0
-			})
+			// $('.calculate__discount-wrap').animate({
+			// 	opacity: 0
+			// })
 		}
 	})
 
@@ -577,6 +594,7 @@ var calculator = function(){
 			$(this).addClass('active-btn').siblings().removeClass('active-btn');
 
 			var prodPrice = $(this).parents('.value__table').find('.value__price span');
+			var prodPriceOld = $(this).parents('.value__table').find('.value__price-old span');
 			var putPrice = $(this).data('price');
 			var getPrice = $(this).parent().find('.value__item-wrap-ch').data('ch-price');
 			var summ = $('#value__price span').text();
@@ -586,6 +604,7 @@ var calculator = function(){
 			summ = Number(summ);
 
 			if (prodPrice.hasClass('D')) {
+				prodPriceOld.text(putPrice);
 				var obj1 = (putPrice * 30) / 100;
 				var putPrice = putPrice - obj1; // посчитали цену США
 
@@ -612,6 +631,7 @@ var calculator = function(){
 			$(this).addClass('active-btn').siblings().removeClass('active-btn');
 
 			var prodPrice = $(this).parents('.value__table').find('.value__price span');
+			var prodPriceOld = $(this).parents('.value__table').find('.value__price-old span');
 			var putPrice = $(this).data('ch-price');
 			var getPrice = $(this).parent().find('.value__item-wrap-us').data('price');
 			var summ = $('#value__price span').text();
@@ -621,6 +641,7 @@ var calculator = function(){
 			summ = Number(summ);
 
 			if (prodPrice.hasClass('D')) {
+				prodPriceOld.text(putPrice);
 				var obj1 = (putPrice * 30) / 100;
 				var putPrice = putPrice - obj1; // посчитали цену Китай
 
