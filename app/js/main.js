@@ -361,15 +361,6 @@ var calculator = function(){
 
 // клик на кнопку калькулятора, вся магия здесь
 	$('.calculate__item').on('click', function (event) {
-		// event.preventDefault();
-		// var elementClick = $(this).attr("href");
-
-        // if ($.browser.safari) {
-        //     $('body').animate({ scrollTop: destination }, 1100); //1100 - скорость
-        // } else {
-        //     $('html').animate({ scrollTop: destination }, 1100);
-        // }
-				// console.log(destination);
 
 		dataID = $(this).data('id');
 		var dataName = $(this).data('name'),
@@ -377,32 +368,11 @@ var calculator = function(){
 			usPrice = $(this).data('price'),
 			chPrice = $(this).data('ch-price');
 
-			// console.log(chPrice);
-
 		if ($(this).hasClass('calculate__active-btn')) {
 
 			var x =$(this).data('datacount');
 
 			$(this).removeClass('calculate__active-btn');
-
-			// $('.value__table').each(function( index, element){})
-			// ii++;
-			// var dataN = $(this).data('datacount', datacount);
-			// Number(dataN);
-
-			// if ( datacount > x ) {
-			// 	console.log("datacount :" + datacount);
-			// 	console.log("x : " + x);
-
-			// 	datacount = datacount - 1;
-
-			// 	console.log("datacount после :" + datacount);
-
-			// 	$(this).attr('data-datacount', datacount);
-			// 	console.log(datacount);
-
-			// 	$('.calculate__item[data-id="' + dataID + '"]').attr('data-datacount', datacount);
-			// }
 
 			var createObject = $('.create-object');
 
@@ -415,29 +385,21 @@ var calculator = function(){
 
 				count.each(function(index, element){
 
-					// console.log($(this));
-					// console.log(count);
-
 					$(element).find('.value__price-old span').text("");
-					// console.log("222");
 
 					usPrice = Number(usPrice);
 					chPrice = Number(chPrice);
 
-					// console.log($(element));
-					// var obj1 = (usPrice * 100) / 70;
-					// var qqq = usPrice - obj1; // посчитали цену США
-
-					// var obj2 = (yyy * 100) / 70;
-					// var yyy = yyy - obj2; // посчитали цену Китай
-
 					$(element).find('.value__price .D').text(usPrice);
 					$(element).find('.value__price span').removeClass('D');
 
-					var end = $(element).find('.value__price span').text();
+					// var end = $(element).find('.value__price span').text();
+					var end = $(element).find('.value__price .hui').text();
 					summCo = summCo - +end;
-					accounting.formatNumber(summCo, " ");
-					$('#value__price span').text(summCo);
+					var zz = accounting.formatNumber(summCo, " ");
+					// console.log(zz);
+					$('#value__price .her').text(summCo);
+					$('#value__price span').text(zz);
 
 				})
 
@@ -460,16 +422,19 @@ var calculator = function(){
 					var obj2 = (yyy * 30) / 100;
 					var yyy = yyy - obj2; // посчитали цену Китай
 					var dd = accounting.formatNumber(qqq, " ");
-
+					console.log(dd);
 					$(element).find('.value__price span').text(dd);
+					$(element).find('.value__price .hui').text(qqq);
 					$(element).find('.value__price span').removeClass('D');
 
 				})
 			}
 
-			var end = $('.value__table[data-id="' + dataID + '"]').find('.value__price span').text();
+			var end = $('.value__table[data-id="' + dataID + '"]').find('.value__price .hui').text();
 			summCo = summCo - +end;
-			$('#value__price span').text(summCo);
+			var zz = accounting.formatNumber(summCo, " ");
+			$('#value__price .her').text(summCo);
+			$('#value__price span').text(zz);
 
 			$('.value__table[data-id="' + dataID + '"]').remove();
 			ii--;
@@ -503,7 +468,7 @@ var calculator = function(){
 			}
 
 			// создаем внутренние элементы таблицы
-			createObject.append('<div id="' + datacount + '" class="value__table" data-datacount="' + datacount + '" data-id="' + dataID + '"><div class="value__close"></div><div class="value__table-row"><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__ebala-detail ' + imgClass + '"><span>' + dataName + '</span></div></div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"> ' + hasPrice + ' </div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__price-old"><span></span></div><div class="value__price"><span></span></div></div></div></div></div></div>');
+			createObject.append('<div id="' + datacount + '" class="value__table" data-datacount="' + datacount + '" data-id="' + dataID + '"><div class="value__close"></div><div class="value__table-row"><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__ebala-detail ' + imgClass + '"><span>' + dataName + '</span></div></div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"> ' + hasPrice + ' </div></div></div><div class="value__table-finish"><div class="value__content"><div class="value__ebala"><div class="value__price-old"><span></span></div><div class="value__price"><span></span><div class="hui"></div></div></div></div></div></div></div>');
 
 			var count = [];
 
@@ -526,22 +491,35 @@ var calculator = function(){
 
 					var obj2 = (yyy * 30) / 100;
 					var yyy = yyy - obj2; // посчитали цену Китай
-					var dd = accounting.formatNumber(qqq, " ");
-
-					$(element).find('.value__price span').text(dd);
+					var ee = accounting.formatNumber(qqq, 0, " ");
+					Number(ee);
+					// console.log(ee);
+					$(element).find('.value__price span').text(ee);
+					$(element).find('.value__price .hui').text(qqq);
 					$(element).find('.value__price span').addClass('D');
 
-					var end = $(element).find('.value__price span').text();
+					var end = $(element).find('.value__price .hui').text();
+					// Number(end);
+					console.log(end);
+
 					summCo = summCo + +end;
-					$('#value__price span').text(summCo);
+					// var summCo = accounting.formatNumber(summCo, " ");
+					// console.log(summCo);
+					var zz = accounting.formatNumber(qqq, 0, " ");
+					$('#value__price .her').text(summCo);
+					$('#value__price span').text(zz);
 
 				}else{
+					var oo = accounting.formatNumber(usPrice, 0, " ");
 					$(element).find('.value__price-old span').text("");
-					$(element).find('.value__price span').text(usPrice);
+					$(element).find('.value__price span').text(oo);
+					$(element).find('.value__price .hui').text(usPrice);
 
-					var end = $(element).find('.value__price span').text();
+					var end = $(element).find('.value__price .hui').text();
 					summCo = summCo + +end;
-					$('#value__price span').text(summCo);
+					var zz = accounting.formatNumber(summCo, 0, " ");
+					$('#value__price .her').text(summCo);
+					$('#value__price span').text(zz);
 				}
 
 				// if ($('.calculate__active-btn').length > 1) {
@@ -572,9 +550,11 @@ var calculator = function(){
 
 		dataID = $(this).parent().data('id');
 
-		var end = $('.value__table[data-id="' + dataID + '"]').find('.value__price span').text();
+		var end = $('.value__table[data-id="' + dataID + '"]').find('.value__price .hui').text();
 			summCo = summCo - +end;
-			$('#value__price span').text(summCo);
+			var zz = accounting.formatNumber(summCo, 0, " ");
+			$('#value__price .her').text(summCo);
+			$('#value__price span').text(zz);
 
 		$(this).parent('.value__table[data-id="' + dataID + '"]').remove();
 		$('.calculate__item[data-id="' + dataID + '"]').removeClass('calculate__active-btn');
@@ -597,7 +577,7 @@ var calculator = function(){
 			var prodPriceOld = $(this).parents('.value__table').find('.value__price-old span');
 			var putPrice = $(this).data('price');
 			var getPrice = $(this).parent().find('.value__item-wrap-ch').data('ch-price');
-			var summ = $('#value__price span').text();
+			var summ = $('#value__price .her').text();
 
 			putPrice = Number(putPrice);
 			getPrice = Number(getPrice);
@@ -605,6 +585,8 @@ var calculator = function(){
 
 			if (prodPrice.hasClass('D')) {
 				prodPriceOld.text(putPrice);
+				var qwer = prodPriceOld.text(putPrice);
+				console.log(qwer);
 				var obj1 = (putPrice * 30) / 100;
 				var putPrice = putPrice - obj1; // посчитали цену США
 
@@ -619,8 +601,9 @@ var calculator = function(){
 
 				var itog = summ - getPrice + putPrice;
 			}
-
-			$('#value__price span').text(itog);
+			var zz = accounting.formatNumber(itog, 0, " ");
+			$('#value__price .her').text(itog);
+			$('#value__price span').text(zz);
 		}
 	})
 
@@ -634,7 +617,7 @@ var calculator = function(){
 			var prodPriceOld = $(this).parents('.value__table').find('.value__price-old span');
 			var putPrice = $(this).data('ch-price');
 			var getPrice = $(this).parent().find('.value__item-wrap-us').data('price');
-			var summ = $('#value__price span').text();
+			var summ = $('#value__price .her').text();
 
 			putPrice = Number(putPrice);
 			getPrice = Number(getPrice);
@@ -657,9 +640,11 @@ var calculator = function(){
 				var itog = summ - getPrice + putPrice;
 			}
 
-			console.log(itog);
+			// console.log(itog);
 
-			$('#value__price span').text(itog);
+			var zz = accounting.formatNumber(itog, 0, " ");
+			$('#value__price .her').text(itog);
+			$('#value__price span').text(zz);
 		}
 	})
 

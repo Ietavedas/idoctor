@@ -209,7 +209,7 @@ body{
 
 		.social{
 			margin-left: 20px;
-			margin-top: 1px;
+			margin-top: 0.4%;
 
 			a{
 				// margin-left: 10px;
@@ -269,7 +269,7 @@ body{
 			content: url(../images/i.png);
 			position: absolute;
 			left: 0;
-			margin-top: 4px;
+			margin-top: 2px;
 		}
 	}
 
@@ -1337,6 +1337,10 @@ a.top-full__contact-text{
 	}
 }
 
+.her, .hui{
+	text-indent: -9999px;
+	font-size: 0;
+}
 
 .slider-wrap{
 	width: 100%;
