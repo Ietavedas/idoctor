@@ -831,6 +831,42 @@ a.top-full__contact-text {
       .calculate__active-btn .calculate__counter:after {
         content: "\2714";
         color: #fff; }
+  .calculate__active-btn2 {
+    position: relative;
+    z-index: 10; }
+    .calculate__active-btn2:before {
+      content: "";
+      background: linear-gradient(to top, #a3d673 0%, #3ad0ce 100%);
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      z-index: -2; }
+    .calculate__active-btn2:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background: #fafafa; }
+    .calculate__active-btn2 .calculate__counter {
+      opacity: 1;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      color: #fff; }
+      .calculate__active-btn2 .calculate__counter:after {
+        content: "\2714";
+        color: #fff; }
   .calculate__counter {
     width: 26px;
     height: 26px;

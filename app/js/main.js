@@ -5,7 +5,7 @@ $('.transition').on('click', function() {
 		top: "130px"
 	})
 
-	$('.js-value').css('display', 'none');
+	// $('.js-value').css('display', 'none');
 
 	$('#content').load("culc.html", function() {
 		buttonsWidth();
@@ -45,14 +45,14 @@ $('.transition').on('click', function() {
 		}
 
 		hoverSvg();
-		$('.js-value2').css('display', 'block');
+		// $('.js-value2').css('display', 'block');
 		$('.closer').on('click', function() {
 			$('#content').animate({
 				top: "100%"
 			})
 			$('body').css('position', 'static');
-			$('.js-value').css('display', 'block');
-			$('.js-value2').css('display', 'none');
+			// $('.js-value').css('display', 'block');
+			// $('.js-value2').css('display', 'none');
 			buttonsWidth();
 		})
 
@@ -814,7 +814,7 @@ var calculatorA = function(){
 
 		$('.js-iphone2').addClass('active-btn').siblings().removeClass('active-btn');
 
-		$('.calculate__item2').removeClass('calculate__active-btn');
+		$('.calculate__item2').removeClass('calculate__active-btn2');
 
 		$('.calculate__left--phone2').css(
 			"display", "flex"
@@ -833,7 +833,7 @@ var calculatorA = function(){
 
 		$('.js-ipad2').addClass('active-btn').siblings().removeClass('active-btn');
 
-		$('.calculate__item2').removeClass('calculate__active-btn');
+		$('.calculate__item2').removeClass('calculate__active-btn2');
 
 		$('.calculate__left--ipad2').css(
 			"display", "flex"
@@ -852,7 +852,7 @@ var calculatorA = function(){
 
 		$('.js-samsung2').addClass('active-btn').siblings().removeClass('active-btn');
 
-		$('.calculate__item2').removeClass('calculate__active-btn');
+		$('.calculate__item2').removeClass('calculate__active-btn2');
 
 		$('.calculate__left--samsung2').css(
 			"display", "flex"
@@ -872,7 +872,7 @@ var calculatorA = function(){
 
 		$(this).addClass('active-btn').siblings().removeClass('active-btn');
 
-		$('.calculate__item2').removeClass('calculate__active-btn');
+		$('.calculate__item2').removeClass('calculate__active-btn2');
 
 		getDatePrice();
 
@@ -888,7 +888,7 @@ var calculatorA = function(){
 
 		$(this).addClass('active-btn').siblings().removeClass('active-btn');
 
-		$('.calculate__item2').removeClass('calculate__active-btn');
+		$('.calculate__item2').removeClass('calculate__active-btn2');
 
 		getDatePrice();
 
@@ -904,7 +904,7 @@ var calculatorA = function(){
 
 		$(this).addClass('active-btn').siblings().removeClass('active-btn');
 
-		$('.calculate__item2').removeClass('calculate__active-btn');
+		$('.calculate__item2').removeClass('calculate__active-btn2');
 
 		getDatePrice();
 
@@ -973,11 +973,11 @@ var calculatorA = function(){
 			usPrice = $(this).data('price'),
 			chPrice = $(this).data('ch-price');
 
-		if ($(this).hasClass('calculate__active-btn')) {
+		if ($(this).hasClass('calculate__active-btn2')) {
 
 			var x =$(this).data('datacount');
 
-			$(this).removeClass('calculate__active-btn');
+			$(this).removeClass('calculate__active-btn2');
 
 			var createObject = $('.create-object2');
 
@@ -1046,7 +1046,7 @@ var calculatorA = function(){
 
 		}else{
 
-			$(this).addClass('calculate__active-btn');
+			$(this).addClass('calculate__active-btn2');
 
 			datacount++;
 
@@ -1137,7 +1137,7 @@ var calculatorA = function(){
 			})
 		}
 
-		if ($('.calculate__active-btn').length > 0) {
+		if ($('.calculate__active-btn2').length > 0) {
 			$('.value__block-wrap--hidden2').fadeIn();
 			// $('.calculate__discount-wrap').animate({
 			// 	opacity: 1
@@ -1162,9 +1162,9 @@ var calculatorA = function(){
 			$('#value__price2 span').text(zz);
 
 		$(this).parent('.value__table2[data-id="' + dataID + '"]').remove();
-		$('.calculate__item2[data-id="' + dataID + '"]').removeClass('calculate__active-btn');
+		$('.calculate__item2[data-id="' + dataID + '"]').removeClass('calculate__active-btn2');
 
-		if ($('.calculate__active-btn').length < 1) {
+		if ($('.calculate__active-btn2').length < 1) {
 			$('.value__block-wrap--hidden2').fadeOut();
 			// $('.calculate__discount-wrap').animate({
 			// 	opacity: 0
