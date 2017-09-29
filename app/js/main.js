@@ -880,7 +880,7 @@ var calculatorA = function(){
 		$('.value__block-wrap--hidden2').fadeOut();
 		summCo = 0;
 
-		$('#value__price span').text(0);
+		$('#value__price2 span').text(0);
 	});
 	ipadModel.find('.value__item-wrap').click(function(){
 

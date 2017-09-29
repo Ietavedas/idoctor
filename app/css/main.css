@@ -738,6 +738,14 @@ a.top-full__contact-text {
       display: none; }
     .calculate__left--samsung {
       display: none; }
+    .calculate__left--phone2 {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+    .calculate__left--ipad2 {
+      display: none; }
+    .calculate__left--samsung2 {
+      display: none; }
   .calculate__right {
     margin: 0 auto;
     width: 62%; }
