@@ -1,1008 +1,997 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv='X-UA-Compatible' content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
-	<link rel="stylesheet" href="css/libs.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/media480.css">
-</head>
-<body>
-
-<div class="top-full top-fulls">
-	<div class="top-full__wrap">
-
-		<div class="top-full__wrapper">
-
-			<div class="top-full__left">
-				<a href="index.html" class="top-ful__logo">
-					<img src="images/logo.png" alt="">
-				</a>
-			</div>
-
-			<div class="top-full__mid">
-				<nav class="navigation">
-					<span class="navigation__link navigation__link--first">
-						Ремонт:
-					</span>
-					<a href="" class="navigation__link">iPhone</a>
-					<a href="" class="navigation__link">iPad</a>
-					<a href="" class="navigation__link">Samsung</a>
-				</nav>
-			</div>
-
-			<div class="top-full__right">
-				<div class="top-full__contact">
-					<div class="top-full__contact-block">
-						<span class="top-full__contact-text">Челябинск</span>
-						<a class="top-full__contact-text" href="tel:8 800 500 50 62">8 800 500 50 62</a>
-						<span class="top-full__contact-text">Ежедневно с 8 до 22</span>
-					</div>
-					<div class="top-full__contact-block">
-						<a data-src="#recall-popup" id="toRecall2" href="" class="btn btn--small">Бесплатный вызов мастера</a>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
+<div class="popap-wrapper">
+	<div class="closer">
+		<!-- <figure class="animation-demo"> -->
+			<svg viewbox="0 0 50 50" >
+	  <path id="svgAn2" class="str0" fill="#000000" d="M10 18c3,2 12,12 15,14m15 -14c-2,1 -14,13 -15,14">
+	    <animate id="animate-to-arrow"
+	             attributeName="d"
+	             dur="200ms"
+	             begin="indefinite"
+	             from="M10 10c10,10 20,20 30,30m0 -30c-10,10 -20,20 -30,30"
+	             to="M10 18c3,2 12,12 15,14m15 -14c-2,1 -14,13 -15,14"/>
+		 <animate id="animate-from-arrow"
+	            attributeName="d"
+	            dur="200ms"
+	            begin="indefinite"
+	            from="M10 18c3,2 12,12 15,14m15 -14c-2,1 -14,13 -15,14"
+	            to="M10 10c10,10 20,20 30,30m0 -30c-10,10 -20,20 -30,30"/>
+	<!--     <animate id="two"
+	             attributeName="d"
+	             dur="1000ms"
+	             repeatCount="indefinite"
+	             values="M10 18c3,2 12,12 15,14m15 -14c-2,1 -14,13 -15,14;"/> -->
+		  </path>
+			<path id="svgAn1" class="str0" fill="#000000" d="M10 10c10,10 20,20 30,30m0 -30c-10,10 -20,20 -30,30"> </path>
+		</svg>
+	<!-- </figure> -->
 	</div>
-</div>
+	<!-- <div class="top-full top-fulls">
+		<div class="top-full__wrap">
 
+			<div class="top-full__wrapper">
 
-<div class="value">
+				<div class="top-full__left">
+					<a href="index.html" class="top-ful__logo">
+						<img src="images/logo.png" alt="">
+					</a>
+				</div>
 
-	<h2 class="common-title">Узнать стоимость ремонта вашего гаджета</h2>
+				<div class="top-full__mid">
+					<nav class="navigation">
+						<span class="navigation__link navigation__link--first">
+							Ремонт:
+						</span>
+						<a href="" class="navigation__link">iPhone</a>
+						<a href="" class="navigation__link">iPad</a>
+						<a href="" class="navigation__link">Samsung</a>
+					</nav>
+				</div>
 
-	<div class="value__block-wrap">
-		<div class="inner-big">
-
-			<div class="value__block">
-				<div class="value__num-title">1.</div>
-
-				<div class="value__content-block">
-					<div class="value__title">Выберите ваше устроиство:</div>
-					<div class="value__content">
-						<div class="value__list device">
-							<div class="value__item-wrap js-iphone active-btn">
-								<span>iPhone</span>
-							</div>
-							<div class="value__item-wrap js-ipad">
-								<span>iPad</span>
-							</div>
-							<div class="value__item-wrap js-samsung">
-								<span>Samsung</span>
-							</div>
+				<div class="top-full__right">
+					<div class="top-full__contact">
+						<div class="top-full__contact-block">
+							<span class="top-full__contact-text">Челябинск</span>
+							<a class="top-full__contact-text" href="tel:8 800 500 50 62">8 800 500 50 62</a>
+							<span class="top-full__contact-text">Ежедневно с 8 до 22</span>
+						</div>
+						<div class="top-full__contact-block">
+							<a data-src="#recall-popup" id="toRecall2" href="" class="btn btn--small">Бесплатный вызов мастера</a>
 						</div>
 					</div>
 				</div>
+
 			</div>
 
-		</div>
-	</div>
-
-	<div class="value__block-wrap">
-		<div class="inner-big">
-
-			<div class="value__block">
-				<div class="value__num-title">2.</div>
-
-				<div class="value__content-block">
-					<div class="value__title">Выберите вашу модель:</div>
-					<div class="value__content">
-
-						<div class="value__list js-iphoneModel model">
-							<div class="value__item-wrap active-btn" data-i="4"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500"
-
-							data-ch-cracked-screen="1000"
-							data-ch-housing="2000"
-							data-ch-microphone="3000"
-							data-ch-home-button="4000"
-							data-ch-broken-glass="5000"
-							data-ch-diagnostics="6000"
-							data-ch-power-button="7000"
-							data-ch-quiet-sound="8000"
-							data-ch-battery="1500"
-							data-ch-photo-camera="2500"
-							data-ch-other="3500">
-								<span>4</span>
-							</div>
-							<div class="value__item-wrap" data-i="4s"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>4S</span>
-							</div>
-							<div class="value__item-wrap" data-i="5"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>5</span>
-							</div>
-							<div class="value__item-wrap" data-i="5c"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>5C</span>
-							</div>
-							<div class="value__item-wrap" data-i="5s"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>5S</span>
-							</div>
-							<div class="value__item-wrap" data-i="se"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>SE</span>
-							</div>
-							<div class="value__item-wrap" data-i="6"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>6</span>
-							</div>
-							<div class="value__item-wrap" data-i="6"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>6 Plus</span>
-							</div>
-							<div class="value__item-wrap" data-i="6s"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>6S</span>
-							</div>
-							<div class="value__item-wrap" data-i="6s"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>6S Plus</span>
-							</div>
-							<div class="value__item-wrap" data-i="7"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>7</span>
-							</div>
-							<div class="value__item-wrap" data-i="7"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>7 Plus</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="8-8pl-10"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>8</span>
-							</div>
-
-						</div>
-
-						<div class="value__list js-ipadModel">
-
-							<div class="value__item-wrap active-btn" data-i="ipad2"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>2</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="ipad3"
-							data-cracked-screen="20000"
-							data-housing="30000"
-							data-microphone="40000"
-							data-home-button="500000"
-							data-broken-glass="6000000"
-							data-diagnostics="70000"
-							data-power-button="80000"
-							data-quiet-sound="90000"
-							data-battery="25000"
-							data-photo-camera="35000"
-							data-other="4500000">
-								<span>3</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="ipad4"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>4</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="air"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>Air</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="air"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>Air 2</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="mini2"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>Mini</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="mini2"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>Mini 2</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="ipad3"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>Mini 3</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="ipad4"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>Mini 4</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="ipad5"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>Pro</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="ipad6"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>iPad (5)</span>
-							</div>
-
-						</div>
-
-						<div class="value__list js-samsungModel">
-
-							<div class="value__item-wrap active-btn" data-i="a3"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>A3</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="a5"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>A5</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="a7"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>A7</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="j5"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>J5</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="j7"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-hother="4500">
-								<span>J7</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="s4"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>S4</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="s4-mini"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-hother="4500">
-								<span>S4 mini</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="s5"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>S5</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="s6"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>S6</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="s7"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>S7</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="note4"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>Note 4</span>
-							</div>
-
-							<div class="value__item-wrap" data-i="note5"
-							data-cracked-screen="2000"
-							data-housing="3000"
-							data-microphone="4000"
-							data-home-button="5000"
-							data-broken-glass="6000"
-							data-diagnostics="7000"
-							data-power-button="8000"
-							data-quiet-sound="9000"
-							data-battery="2500"
-							data-photo-camera="3500"
-							data-other="4500">
-								<span>Note 5</span>
-							</div>
-
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-	<div class="value__block-wrap">
-		<div class="inner-big">
-
-			<div class="value__block">
-				<div class="value__num-title">3.</div>
-
-				<div class="value__content-block">
-					<div class="value__title">Выберите тип проблемы:</div>
-					<div class="value__content">
-
-						<div class="calculate">
-							<div class="calculate__left calculate__left--phone">
-								<div class="calculate__item act broken-glass" data-class="broken-glass" data-name="Разбито стекло" data-id="1"  data-price="6000" data-ch-price="5000">
-									<div class="calculate__img"><img src="images/steklo.png" alt=""></div>
-									<div class="calculate__text"><span>Разбито стекло</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act cracked-screen" data-class="cracked-screen" data-name="Разбит дисплей" data-id="2" data-price="2000">
-									<div class="calculate__img"><img src="images/display.png" alt=""></div>
-									<div class="calculate__text"><span>Разбит дисплей</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act battery" data-class="battery" data-name="Проблемы с батареей" data-id="3" data-price="2500">
-									<div class="calculate__img"><img src="images/calc9.png" alt=""></div>
-									<div class="calculate__text"><span>Проблемы с батареей</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act diagnostics" data-class="diagnostics" data-name="Диагностика" data-id="4" data-price="7000">
-									<div class="calculate__img"><img src="images/diagnoz.png" alt=""></div>
-									<div class="calculate__text"><span>Диагностика</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act power-button" data-class="power-button" data-name="Не включается" data-id="5" data-price="8000">
-									<div class="calculate__img"><img src="images/vkluchenie.png" alt=""></div>
-									<div class="calculate__text"><span>Не включается</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act quiet-sound" data-class="quiet-sound" data-name="Тихий звук" data-id="6" data-price="9000">
-									<div class="calculate__img"><img src="images/calc8.png" alt=""></div>
-									<div class="calculate__text"><span>Тихий звук</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act photo-camera" data-class="photo-camera" data-name="Камера" data-id="7" data-price="3500">
-									<div class="calculate__img"><img src="images/calc10.png" alt=""></div>
-									<div class="calculate__text"><span>Камера</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act home-button" data-class="home-button" data-name="Кнопка Home" data-id="8" data-price="5000">
-									<div class="calculate__img"><img src="images/calc4.png" alt=""></div>
-									<div class="calculate__text"><span>Кнопка (Любая)</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act microphone" data-class="microphone" data-name="Микрофон/Динамик" data-id="9" data-price="4000">
-									<div class="calculate__img"><img src="images/calc3.png" alt=""></div>
-									<div class="calculate__text"><span>Микрофон/ Динамик</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act housing" data-class="housing" data-name="Корпус" data-id="10" data-price="3000">
-									<div class="calculate__img"><img src="images/korpus.png" alt=""></div>
-									<div class="calculate__text"><span>Корпус</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act other" data-class="other" data-name="Другое" data-id="11" data-price="4500">
-									<div class="calculate__img"><img src="images/mat_plata.png" alt=""></div>
-									<div class="calculate__text"><span>Другое</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__discount-wrap">
-									<!-- <div class="calculate__img"><img src="images/" alt=""></div> -->
-									<!-- <div class="calculate__text"><span>%</span></div> -->
-
-									<div class="calculate__discount">
-										<!-- <div>Добавить вторую поломку со скидкой 30%</div> -->
-										<img src="images/discount.jpg" alt="">
-									</div>
-								</div>
-							</div>
-
-							<div class="calculate__left calculate__left--ipad">
-								<div class="calculate__item act broken-glass" data-id="1" data-price="6000">
-									<div class="calculate__img"><img src="images/steklo.png" alt=""></div>
-									<div class="calculate__text"><span>Разбито стекло</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act cracked-screen" data-id="2" data-price="2000">
-									<div class="calculate__img"><img src="images/calc1.png" alt=""></div>
-									<div class="calculate__text"><span>Разбит дисплей</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act battery" data-id="3" data-price="2500">
-									<div class="calculate__img"><img src="images/calc9.png" alt=""></div>
-									<div class="calculate__text"><span>Проблемы с батареей</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act diagnostics" data-id="4" data-price="7000">
-									<div class="calculate__img"><img src="images/diagnoz.png" alt=""></div>
-									<div class="calculate__text"><span>Диагностика</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act home-button" data-id="5" data-price="5000">
-									<div class="calculate__img"><img src="images/calc4.png" alt=""></div>
-									<div class="calculate__text"><span>Кнопка (Любая)</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act housing" data-id="6" data-price="3000">
-									<div class="calculate__img"><img src="images/korpus.png" alt=""></div>
-									<div class="calculate__text"><span>Корпус</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__discount-wrap">
-									<!-- <div class="calculate__img"><img src="" alt=""></div> -->
-									<!-- <div class="calculate__text"><span></span></div> -->
-
-									<div class="calculate__discount">
-										<!-- <div>Добавить вторую поломку со скидкой 30%</div> -->
-										<img src="images/discount.jpg" alt="">
-									</div>
-								</div>
-							</div>
-
-							<div class="calculate__left calculate__left--samsung">
-								<div class="calculate__item act broken-glass" data-id="1" data-price="6000">
-									<div class="calculate__img"><img src="images/steklo.png" alt=""></div>
-									<div class="calculate__text"><span>Разбито стекло</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act cracked-screen" data-id="2" data-price="2000">
-									<div class="calculate__img"><img src="images/calc1.png" alt=""></div>
-									<div class="calculate__text"><span>Разбит дисплей</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__item act battery" data-id="3" data-price="2500">
-									<div class="calculate__img"><img src="images/calc9.png" alt=""></div>
-									<div class="calculate__text"><span>Проблемы с батареей</span></div>
-									<div class="calculate__counter"></div>
-								</div>
-								<div class="calculate__discount-wrap">
-									<!-- <div class="calculate__img"><img src="" alt=""></div> -->
-									<!-- <div class="calculate__text"><span></span></div> -->
-
-									<div class="calculate__discount">
-										<!-- <div>Добавить вторую поломку со скидкой 30%</div> -->
-										<img src="images/discount.jpg" alt="">
-									</div>
-								</div>
-							</div>
-							<div class="calculate__right">
-
-								<div class="calculate__device calculate__iphone active-img">
-									<!-- <img src="images/iphone.png" alt=""> -->
-									<img class="calcul_img active-img" data-i="4" src="images/iphone/4.jpg" alt="">
-									<img class="calcul_img" data-i="4s" src="images/iphone/4s.jpg" alt="">
-									<img class="calcul_img" data-i="5" src="images/iphone/5.jpg" alt="">
-									<img class="calcul_img" data-i="5c" src="images/iphone/5c.jpg" alt="">
-									<img class="calcul_img" data-i="5s" src="images/iphone/5s.jpg" alt="">
-									<img class="calcul_img" data-i="6" src="images/iphone/6.jpg" alt="">
-									<img class="calcul_img" data-i="6s" src="images/iphone/6s.jpg" alt="">
-									<img class="calcul_img" data-i="7" src="images/iphone/7.jpg" alt="">
-									<img class="calcul_img" data-i="8-8pl-10" src="images/iphone/8-8pl-10.jpg" alt="">
-									<img class="calcul_img" data-i="se" src="images/iphone/se.jpg" alt="">
-								</div>
-
-								<div class="calculate__device calculate__andriod">
-									<img class="calcul_img active-img" data-i="a3" src="images/android/a3.jpg" alt="">
-									<img class="calcul_img" data-i="a5" src="images/android/a5.jpg" alt="">
-									<img class="calcul_img" data-i="a7" src="images/android/a7.jpg" alt="">
-									<img class="calcul_img" data-i="j5" src="images/android/j5.jpg" alt="">
-									<img class="calcul_img" data-i="j7" src="images/android/j7.jpg" alt="">
-									<img class="calcul_img" data-i="note4" src="images/android/note4.jpg" alt="">
-									<img class="calcul_img" data-i="note5" src="images/android/note5.jpg" alt="">
-									<img class="calcul_img" data-i="s3" src="images/android/s3.jpg" alt="">
-									<img class="calcul_img" data-i="s4" src="images/android/s4.jpg" alt="">
-									<img class="calcul_img" data-i="s4-mini" src="images/android/s4-mini.jpg" alt="">
-									<img class="calcul_img" data-i="s5" src="images/android/s5.jpg" alt="">
-									<img class="calcul_img" data-i="s6" src="images/android/s6.jpg" alt="">
-									<img class="calcul_img" data-i="s7" src="images/android/s7.jpg" alt="">
-								</div>
-
-								<div class="calculate__device calculate__ipad">
-									<img class="calcul_img active-img" data-i="air" src="images/ipad/air.jpg" alt="">
-									<img class="calcul_img" data-i="mini2" src="images/ipad/mini2.jpg" alt="">
-									<img class="calcul_img" data-i="ipad2" src="images/ipad/2.jpg" alt="">
-									<img class="calcul_img" data-i="ipad3" src="images/ipad/3.jpg" alt="">
-									<img class="calcul_img" data-i="ipad4" src="images/ipad/4.jpg" alt="">
-									<img class="calcul_img" data-i="ipad5" src="images/ipad/5.jpg" alt="">
-									<img class="calcul_img" data-i="ipad6" src="images/ipad/6.jpg" alt="">
-									<img class="calcul_img" data-i="ipad7" src="images/ipad/7.jpg" alt="">
-									<img class="calcul_img" data-i="ipad8" src="images/ipad/8.jpg" alt="">
-									<img class="calcul_img" data-i="ipad9" src="images/ipad/9.jpg" alt="">
-								</div>
-
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-	<div class="value__block-wrap value__block-wrap--hidden">
-		<div class="inner-big">
-
-			<div class="value__block value__block--">
-				<div class="value__num-title">4.</div>
-
-				<div class="value__content-block">
-					<!-- <div class="value__title">Выберите страну изготовителя детали:</div>
-					<div class="value__content">
-						<div class="value__list">
-							<div class="value__item-wrap">
-								<span>США</span>
-							</div>
-							<div class="value__item-wrap">
-								<span>Китай</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="value__title">Выберите страну изготовителя детали:</div>
-					<div class="value__content">
-						<div class="value__list">
-							<div class="value__item-wrap">
-								<span>США</span>
-							</div>
-							<div class="value__item-wrap">
-								<span>Китай</span>
-							</div>
-						</div>
-					</div> -->
-					<div class="value__table-title">
-						<div class="value__title">Деталь:</div>
-						<div class="value__title">Качество запчасти:</div>
-						<div class="value__title">Цена:</div>
-					</div>
-
-					<div class="create-object"></div>
-
-					<div class="value__summ">
-
-						<div class="value__title">Итого:</div>
-						<div id="value__price" class="">
-							<span></span> рублей<div class="her"></div>
-						</div>
-						<!-- <a  data-src="#recall-popup" id="toRecallRemont" href="" class="btn">Заказать ремонт</a> -->
-
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-	<!-- <div class="value__block-wrap">
-		<div class="inner-big">
-			.value__block
 		</div>
 	</div> -->
 
-	<div class="value__block-wrap value__block-wrap--hidden">
-		<div class="inner-big">
 
-			<div class="value__block">
-				<div class="value__finish">
-					<img src="images/finish.png" alt="">
+	<div class="value js-value2">
+
+		<h2 class="common-title">Узнать стоимость ремонта вашего гаджета</h2>
+
+		<div class="value__block-wrap">
+			<div class="inner-big">
+
+				<div class="value__block">
+					<div class="value__num-title">1.</div>
+
+					<div class="value__content-block">
+						<div class="value__title">Выберите ваше устроиство:</div>
+						<div class="value__content">
+							<div class="value__list device">
+								<div class="value__item-wrap js-iphone2 active-btn">
+									<span>iPhone</span>
+								</div>
+								<div class="value__item-wrap js-ipad2">
+									<span>iPad</span>
+								</div>
+								<div class="value__item-wrap js-samsung2">
+									<span>Samsung</span>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 
-				<div class="value__content-block value__content-block--right">
+			</div>
+		</div>
 
-					<div class="value__content">
-						<!-- <div class="value__desc-block">
-							<div>Дополнительно мы даем временный телефон на замену вашего</div>
-						</div> -->
+		<div class="value__block-wrap">
+			<div class="inner-big">
+
+				<div class="value__block">
+					<div class="value__num-title">2.</div>
+
+					<div class="value__content-block">
+						<div class="value__title">Выберите вашу модель:</div>
+						<div class="value__content">
+
+							<div class="value__list js-iphoneModel2 model">
+								<div class="value__item-wrap active-btn" data-i="4"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500"
+
+								data-ch-cracked-screen="1000"
+								data-ch-housing="2000"
+								data-ch-microphone="3000"
+								data-ch-home-button="4000"
+								data-ch-broken-glass="5000"
+								data-ch-diagnostics="6000"
+								data-ch-power-button="7000"
+								data-ch-quiet-sound="8000"
+								data-ch-battery="1500"
+								data-ch-photo-camera="2500"
+								data-ch-other="3500">
+									<span>4</span>
+								</div>
+								<div class="value__item-wrap" data-i="4s"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>4S</span>
+								</div>
+								<div class="value__item-wrap" data-i="5"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>5</span>
+								</div>
+								<div class="value__item-wrap" data-i="5c"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>5C</span>
+								</div>
+								<div class="value__item-wrap" data-i="5s"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>5S</span>
+								</div>
+								<div class="value__item-wrap" data-i="se"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>SE</span>
+								</div>
+								<div class="value__item-wrap" data-i="6"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>6</span>
+								</div>
+								<div class="value__item-wrap" data-i="6"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>6 Plus</span>
+								</div>
+								<div class="value__item-wrap" data-i="6s"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>6S</span>
+								</div>
+								<div class="value__item-wrap" data-i="6s"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>6S Plus</span>
+								</div>
+								<div class="value__item-wrap" data-i="7"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>7</span>
+								</div>
+								<div class="value__item-wrap" data-i="7"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>7 Plus</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="8-8pl-10"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>8</span>
+								</div>
+
+							</div>
+
+							<div class="value__list js-ipadModel">
+
+								<div class="value__item-wrap active-btn" data-i="ipad2"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>2</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="ipad3"
+								data-cracked-screen="20000"
+								data-housing="30000"
+								data-microphone="40000"
+								data-home-button="500000"
+								data-broken-glass="6000000"
+								data-diagnostics="70000"
+								data-power-button="80000"
+								data-quiet-sound="90000"
+								data-battery="25000"
+								data-photo-camera="35000"
+								data-other="4500000">
+									<span>3</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="ipad4"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>4</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="air"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>Air</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="air"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>Air 2</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="mini2"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>Mini</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="mini2"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>Mini 2</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="ipad3"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>Mini 3</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="ipad4"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>Mini 4</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="ipad5"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>Pro</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="ipad6"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>iPad (5)</span>
+								</div>
+
+							</div>
+
+							<div class="value__list js-samsungModel">
+
+								<div class="value__item-wrap active-btn" data-i="a3"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>A3</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="a5"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>A5</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="a7"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>A7</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="j5"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>J5</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="j7"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-hother="4500">
+									<span>J7</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="s4"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>S4</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="s4-mini"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-hother="4500">
+									<span>S4 mini</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="s5"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>S5</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="s6"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>S6</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="s7"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>S7</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="note4"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>Note 4</span>
+								</div>
+
+								<div class="value__item-wrap" data-i="note5"
+								data-cracked-screen="2000"
+								data-housing="3000"
+								data-microphone="4000"
+								data-home-button="5000"
+								data-broken-glass="6000"
+								data-diagnostics="7000"
+								data-power-button="8000"
+								data-quiet-sound="9000"
+								data-battery="2500"
+								data-photo-camera="3500"
+								data-other="4500">
+									<span>Note 5</span>
+								</div>
+
+							</div>
+
+						</div>
 					</div>
+				</div>
 
-					<form id="culcForm" action="">
-						<div class="recall__phone-wrap">
-							<input type="text" class="recall__phone" id="culcPhone" name="phone" placeholder="+7 (   )   -  -  ">
+			</div>
+		</div>
+
+		<div class="value__block-wrap">
+			<div class="inner-big">
+
+				<div class="value__block">
+					<div class="value__num-title">3.</div>
+
+					<div class="value__content-block">
+						<div class="value__title">Выберите тип проблемы:</div>
+						<div class="value__content">
+
+							<div class="calculate">
+								<div class="calculate__left calculate__left--phone">
+									<div class="calculate__item2 act broken-glass" data-class="broken-glass" data-name="Разбито стекло" data-id="1"  data-price="6000" data-ch-price="5000">
+										<div class="calculate__img"><img src="images/steklo.png" alt=""></div>
+										<div class="calculate__text"><span>Разбито стекло</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act cracked-screen" data-class="cracked-screen" data-name="Разбит дисплей" data-id="2" data-price="2000">
+										<div class="calculate__img"><img src="images/display.png" alt=""></div>
+										<div class="calculate__text"><span>Разбит дисплей</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act battery" data-class="battery" data-name="Проблемы с батареей" data-id="3" data-price="2500">
+										<div class="calculate__img"><img src="images/calc9.png" alt=""></div>
+										<div class="calculate__text"><span>Проблемы с батареей</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act diagnostics" data-class="diagnostics" data-name="Диагностика" data-id="4" data-price="7000">
+										<div class="calculate__img"><img src="images/diagnoz.png" alt=""></div>
+										<div class="calculate__text"><span>Диагностика</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act power-button" data-class="power-button" data-name="Не включается" data-id="5" data-price="8000">
+										<div class="calculate__img"><img src="images/vkluchenie.png" alt=""></div>
+										<div class="calculate__text"><span>Не включается</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act quiet-sound" data-class="quiet-sound" data-name="Тихий звук" data-id="6" data-price="9000">
+										<div class="calculate__img"><img src="images/calc8.png" alt=""></div>
+										<div class="calculate__text"><span>Тихий звук</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act photo-camera" data-class="photo-camera" data-name="Камера" data-id="7" data-price="3500">
+										<div class="calculate__img"><img src="images/calc10.png" alt=""></div>
+										<div class="calculate__text"><span>Камера</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act home-button" data-class="home-button" data-name="Кнопка Home" data-id="8" data-price="5000">
+										<div class="calculate__img"><img src="images/calc4.png" alt=""></div>
+										<div class="calculate__text"><span>Кнопка (Любая)</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act microphone" data-class="microphone" data-name="Микрофон/Динамик" data-id="9" data-price="4000">
+										<div class="calculate__img"><img src="images/calc3.png" alt=""></div>
+										<div class="calculate__text"><span>Микрофон/ Динамик</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act housing" data-class="housing" data-name="Корпус" data-id="10" data-price="3000">
+										<div class="calculate__img"><img src="images/korpus.png" alt=""></div>
+										<div class="calculate__text"><span>Корпус</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act other" data-class="other" data-name="Другое" data-id="11" data-price="4500">
+										<div class="calculate__img"><img src="images/mat_plata.png" alt=""></div>
+										<div class="calculate__text"><span>Другое</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__discount-wrap">
+										<!-- <div class="calculate__img"><img src="images/" alt=""></div> -->
+										<div class="calculate__text"><span>%</span></div>
+
+										<div class="calculate__discount">
+											<!-- <div>Добавить вторую поломку со скидкой 30%</div> -->
+											<img src="images/discount.jpg" alt="">
+										</div>
+									</div>
+								</div>
+
+								<div class="calculate__left calculate__left--ipad">
+									<div class="calculate__item2 act broken-glass" data-id="1" data-price="6000">
+										<div class="calculate__img"><img src="images/steklo.png" alt=""></div>
+										<div class="calculate__text"><span>Разбито стекло</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act cracked-screen" data-id="2" data-price="2000">
+										<div class="calculate__img"><img src="images/calc1.png" alt=""></div>
+										<div class="calculate__text"><span>Разбит дисплей</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act battery" data-id="3" data-price="2500">
+										<div class="calculate__img"><img src="images/calc9.png" alt=""></div>
+										<div class="calculate__text"><span>Проблемы с батареей</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act diagnostics" data-id="4" data-price="7000">
+										<div class="calculate__img"><img src="images/diagnoz.png" alt=""></div>
+										<div class="calculate__text"><span>Диагностика</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act home-button" data-id="5" data-price="5000">
+										<div class="calculate__img"><img src="images/calc4.png" alt=""></div>
+										<div class="calculate__text"><span>Кнопка (Любая)</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act housing" data-id="6" data-price="3000">
+										<div class="calculate__img"><img src="images/korpus.png" alt=""></div>
+										<div class="calculate__text"><span>Корпус</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__discount-wrap">
+										<!-- <div class="calculate__img"><img src="" alt=""></div> -->
+										<!-- <div class="calculate__text"><span></span></div> -->
+
+										<div class="calculate__discount">
+											<!-- <div>Добавить вторую поломку со скидкой 30%</div> -->
+											<img src="images/discount.jpg" alt="">
+										</div>
+									</div>
+								</div>
+
+								<div class="calculate__left calculate__left--samsung">
+									<div class="calculate__item2 act broken-glass" data-id="1" data-price="6000">
+										<div class="calculate__img"><img src="images/steklo.png" alt=""></div>
+										<div class="calculate__text"><span>Разбито стекло</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act cracked-screen" data-id="2" data-price="2000">
+										<div class="calculate__img"><img src="images/calc1.png" alt=""></div>
+										<div class="calculate__text"><span>Разбит дисплей</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__item2 act battery" data-id="3" data-price="2500">
+										<div class="calculate__img"><img src="images/calc9.png" alt=""></div>
+										<div class="calculate__text"><span>Проблемы с батареей</span></div>
+										<div class="calculate__counter"></div>
+									</div>
+									<div class="calculate__discount-wrap">
+										<!-- <div class="calculate__img"><img src="" alt=""></div> -->
+										<!-- <div class="calculate__text"><span></span></div> -->
+
+										<div class="calculate__discount">
+											<!-- <div>Добавить вторую поломку со скидкой 30%</div> -->
+											<img src="images/discount.jpg" alt="">
+										</div>
+									</div>
+								</div>
+								<div class="calculate__right2">
+
+									<div class="calculate__device calculate__iphone2 active-img">
+										<!-- <img src="images/iphone.png" alt=""> -->
+										<img class="calcul_img active-img" data-i="4" src="images/iphone/4.jpg" alt="">
+										<img class="calcul_img" data-i="4s" src="images/iphone/4s.jpg" alt="">
+										<img class="calcul_img" data-i="5" src="images/iphone/5.jpg" alt="">
+										<img class="calcul_img" data-i="5c" src="images/iphone/5c.jpg" alt="">
+										<img class="calcul_img" data-i="5s" src="images/iphone/5s.jpg" alt="">
+										<img class="calcul_img" data-i="6" src="images/iphone/6.jpg" alt="">
+										<img class="calcul_img" data-i="6s" src="images/iphone/6s.jpg" alt="">
+										<img class="calcul_img" data-i="7" src="images/iphone/7.jpg" alt="">
+										<img class="calcul_img" data-i="8-8pl-10" src="images/iphone/8-8pl-10.jpg" alt="">
+										<img class="calcul_img" data-i="se" src="images/iphone/se.jpg" alt="">
+									</div>
+
+									<div class="calculate__device calculate__andriod2">
+										<img class="calcul_img active-img" data-i="a3" src="images/android/a3.jpg" alt="">
+										<img class="calcul_img" data-i="a5" src="images/android/a5.jpg" alt="">
+										<img class="calcul_img" data-i="a7" src="images/android/a7.jpg" alt="">
+										<img class="calcul_img" data-i="j5" src="images/android/j5.jpg" alt="">
+										<img class="calcul_img" data-i="j7" src="images/android/j7.jpg" alt="">
+										<img class="calcul_img" data-i="note4" src="images/android/note4.jpg" alt="">
+										<img class="calcul_img" data-i="note5" src="images/android/note5.jpg" alt="">
+										<img class="calcul_img" data-i="s3" src="images/android/s3.jpg" alt="">
+										<img class="calcul_img" data-i="s4" src="images/android/s4.jpg" alt="">
+										<img class="calcul_img" data-i="s4-mini" src="images/android/s4-mini.jpg" alt="">
+										<img class="calcul_img" data-i="s5" src="images/android/s5.jpg" alt="">
+										<img class="calcul_img" data-i="s6" src="images/android/s6.jpg" alt="">
+										<img class="calcul_img" data-i="s7" src="images/android/s7.jpg" alt="">
+									</div>
+
+									<div class="calculate__device calculate__ipad2">
+										<img class="calcul_img active-img" data-i="air" src="images/ipad/air.jpg" alt="">
+										<img class="calcul_img" data-i="mini2" src="images/ipad/mini2.jpg" alt="">
+										<img class="calcul_img" data-i="ipad2" src="images/ipad/2.jpg" alt="">
+										<img class="calcul_img" data-i="ipad3" src="images/ipad/3.jpg" alt="">
+										<img class="calcul_img" data-i="ipad4" src="images/ipad/4.jpg" alt="">
+										<img class="calcul_img" data-i="ipad5" src="images/ipad/5.jpg" alt="">
+										<img class="calcul_img" data-i="ipad6" src="images/ipad/6.jpg" alt="">
+										<img class="calcul_img" data-i="ipad7" src="images/ipad/7.jpg" alt="">
+										<img class="calcul_img" data-i="ipad8" src="images/ipad/8.jpg" alt="">
+										<img class="calcul_img" data-i="ipad9" src="images/ipad/9.jpg" alt="">
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="value__block-wrap value__block-wrap--hidden2">
+			<div class="inner-big">
+
+				<div class="value__block value__block--">
+					<div class="value__num-title">4.</div>
+
+					<div class="value__content-block">
+						<!-- <div class="value__title">Выберите страну изготовителя детали:</div>
+						<div class="value__content">
+							<div class="value__list">
+								<div class="value__item-wrap">
+									<span>США</span>
+								</div>
+								<div class="value__item-wrap">
+									<span>Китай</span>
+								</div>
+							</div>
 						</div>
 
-						<button type="submit" class="btn">Заказать ремонт</button>
-					</form>
+						<div class="value__title">Выберите страну изготовителя детали:</div>
+						<div class="value__content">
+							<div class="value__list">
+								<div class="value__item-wrap">
+									<span>США</span>
+								</div>
+								<div class="value__item-wrap">
+									<span>Китай</span>
+								</div>
+							</div>
+						</div> -->
+						<div class="value__table-title">
+							<div class="value__title">Деталь:</div>
+							<div class="value__title">Качество запчасти:</div>
+							<div class="value__title">Цена:</div>
+						</div>
 
+						<div class="create-object2"></div>
+
+						<div class="value__summ">
+
+							<div class="value__title">Итого:</div>
+							<div id="value__price2" class="">
+								<span></span> рублей<div class="her"></div>
+							</div>
+							<!-- <a  data-src="#recall-popup" id="toRecallRemont" href="" class="btn">Заказать ремонт</a> -->
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- <div class="value__block-wrap">
+			<div class="inner-big">
+				.value__block
+			</div>
+		</div> -->
+
+		<div class="value__block-wrap value__block-wrap--hidden2">
+			<div class="inner-big">
+
+				<div class="value__block">
+					<div class="value__finish">
+						<img src="images/finish.png" alt="">
+					</div>
+
+					<div class="value__content-block value__content-block--right">
+
+						<div class="value__content">
+							<!-- <div class="value__desc-block">
+								<div>Дополнительно мы даем временный телефон на замену вашего</div>
+							</div> -->
+						</div>
+
+						<form id="culcForm" action="" method="post">
+							<div class="recall__phone-wrap">
+								<input type="text" class="recall__phone" id="culcPhone" name="phone" placeholder="+7 (   )   -  -  " val="">
+							</div>
+
+							<input data-src="#massage2" type="submit" class="btn" value="Заказать ремонт">
+						</form>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<!-- value__list -->
+
+	<!-- <div class="recall-fon">
+
+		<div class="recall">
+
+			<h2 class="common-title">Узнать точную стоимость и получить помощь специалиста</h2>
+
+			<form id="mainForm" action="">
+				<div class="recall__phone-wrap">
+					<input type="text" class="recall__phone" id="mainPhone" name="phone" placeholder="+7(   )-   -  -  ">
+				</div>
+
+				<button type="submit" class="btn">Отправить</button>
+			</form>
+
+		</div>
+
+	</div> -->
+
+	<footer class="footer">
+		<div class="inner-big">
+			<div class="footer-wrap">
+				<div class="footer__block">
+					iDoctor, 2017
+				</div>
+				<div class="footer__block">
+					<span>Сайт создан:</span>
+					<a href="">
+						<img src="images/Start-GO-2.png" alt="">
+					</a>
 				</div>
 			</div>
-
 		</div>
-	</div>
+	</footer>
 
 </div>
-<!-- value__list -->
-
-<div class="recall-fon">
-
-	<div class="recall">
-
-		<h2 class="common-title">Узнать точную стоимость и получить помощь специалиста</h2>
-
-		<form id="mainForm" action="">
-			<div class="recall__phone-wrap">
-				<input type="text" class="recall__phone" id="mainPhone" name="phone" placeholder="+7(   )-   -  -  ">
-			</div>
-
-			<button type="submit" class="btn">Отправить</button>
-		</form>
-
-
-	</div>
-
-</div>
-
-<footer class="footer">
-	<div class="inner-big">
-		<div class="footer-wrap">
-			<div class="footer__block">
-				iDoctor, 2017
-			</div>
-			<div class="footer__block">
-				<span>Сайт создан:</span>
-				<a href="">
-					<img src="images/Start-GO-2.png" alt="">
-				</a>
-			</div>
-		</div>
-	</div>
-</footer>
-
-
-<div id="recall-popup" class="recall-popup" style="display: none">
-	<div class="recall">
-
-		<h2 class="common-title">Узнать точную стоимость и получить помощь специалиста</h2>
-
-		<form id="mainForm" action="">
-			<div class="recall__phone-wrap">
-				<input type="text" class="recall__phone" id="mainPhonePopup" name="phone" placeholder="+7(   )-   -  -  ">
-			</div>
-
-			<button type="submit" class="btn">Отправить</button>
-		</form>
-
-
-	</div>
-</div>
-
-
-<script src="js/libs.min.js"></script>
-<script src="js/mask.js"></script>
-<script src="js/accounting.js"></script>
-<script src="js/main.js"></script>
-</body>
-</html>
