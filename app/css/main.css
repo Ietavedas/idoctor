@@ -1259,7 +1259,8 @@ a.top-full__contact-text {
   .reviews__item {
     padding: 30px 30px 65px 70px;
     background: #f6f6f6;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    position: relative; }
   .reviews__top {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1391,6 +1392,15 @@ a.top-full__contact-text {
   .main-contact .social {
     margin-top: 12px; }
 
+.reviews__social {
+  position: absolute;
+  right: 30px;
+  top: 30px; }
+
+.reviews__social-link {
+  text-decoration: none;
+  margin-left: 3px; }
+
 .map {
   height: 380px;
   width: 100%; }
@@ -1436,7 +1446,8 @@ a.top-full__contact-text {
   #morphing-content .inner-big {
     max-width: none; }
   #morphing-content .reviews__item {
-    margin-right: 30px; }
+    margin-right: 30px;
+    position: relative; }
   #morphing-content .reviews__column:nth-child(3) {
     margin-top: 100px; }
   #morphing-content .reviews {
@@ -1515,3 +1526,13 @@ svg {
   stroke-width: 1.99985;
   stroke-linecap: round;
   stroke-linejoin: round; }
+
+#massage {
+  z-index: 99999999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  background: #fff;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
